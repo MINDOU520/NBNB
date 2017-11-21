@@ -97,10 +97,7 @@
 							<%--<li><a href="#"><span class="glyphicon glyphicon-search" style="color: rgb(215, 90, 60);font-size: 18px;"> 搜索</span></a></li>--%>
 						</ul>
                         <script>
-                            $().dropdown('toggle');
-                            //$(function() {
-                            //    $(".dropdown-toggle").dropdown('toggle');
-                            //});
+                            $().dropdown('toggle');                            
                         </script>
 					</div>
 				</div>
