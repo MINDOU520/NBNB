@@ -1,0 +1,18 @@
+﻿.loginbg {
+    max-width: 100%;
+    height: auto;
+    background-image: url('../img/3.jpg');
+    padding:100px 0;
+    background-size:cover;
+    background-position:center;
+}
+
+.loginbd {
+    width:300px;
+    height:500px;
+    background-color:#00ffff;
+    text-align:center;
+    margin: 0 auto;
+    /*opacity:0.5;*/
+    border-radius: 15px;
+}
