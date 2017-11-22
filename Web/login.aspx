@@ -9,12 +9,12 @@
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="loginbg img-responsive">
-        <div class="loginbd">
-            
+    <div class="container">
+        <div class="loginbg img-responsive">
+        <div class="loginbd">            
             <table class="auto-style1">
                 <tr>
-                    <td>账号：</td>
+                    <td><strong>用户名：</strong></td>
                     <td>
                         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                     </td>
@@ -23,7 +23,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>密码：</td>
+                    <td><strong>密码：</strong></td>
                     <td>
                         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                     </td>
@@ -31,8 +31,8 @@
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="*"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
-                <%--<tr>
-                    <td>验证码：</td>
+                <tr>
+                    <td><strong>验证码：</strong></td>
                     <td>
                         <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
                     </td>
@@ -42,10 +42,8 @@
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
-                    <td>
-                        
-                        <asp:Image ID="Image1" runat="server" ImageUrl="~/yanzhengma.aspx" />
-                        
+                    <td>                        
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Web/yanzhengma.aspx" />                      
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -55,7 +53,7 @@
                         <asp:LinkButton ID="LinkButton1" runat="server">看不清？换一个！</asp:LinkButton>
                     </td>
                     <td>&nbsp;</td>
-                </tr>--%>
+                </tr>
                 <tr>
                     <td>&nbsp;</td>
                     <td>
@@ -77,8 +75,9 @@
                     </td>
                     <td>&nbsp;</td>
                 </tr>
-            </table>
-            
+            </table>            
         </div>
     </div>
+    </div>
+    
 </asp:Content>
