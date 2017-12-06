@@ -10,9 +10,9 @@
 .loginbd {
     width:300px;
     height:500px;
-    background-color:rgb(215, 90, 60);
+    background-color:#ffd800;
     text-align:center;
     margin: 0 auto;
-    /*opacity:0.5;*/
-    border-radius: 15px;
+    opacity:0.7;
+    border-radius: 25px;
 }

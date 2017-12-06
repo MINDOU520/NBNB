@@ -49,7 +49,7 @@ a:active,
 a:hover {
   outline: 0;
 }
-abbr[title] {
+abbr[name] {
   border-bottom: 1px dotted;
 }
 b,
@@ -205,8 +205,8 @@ th {
   a[href]:after {
     content: " (" attr(href) ")";
   }
-  abbr[title]:after {
-    content: " (" attr(title) ")";
+  abbr[name]:after {
+    content: " (" attr(name) ")";
   }
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
@@ -843,7 +843,7 @@ th {
 .glyphicon-hd-video:before {
   content: "\e187";
 }
-.glyphicon-subtitles:before {
+.glyphicon-subnames:before {
   content: "\e188";
 }
 .glyphicon-sound-stereo:before {
@@ -1465,8 +1465,8 @@ dd {
     margin-left: 180px;
   }
 }
-abbr[title],
-abbr[data-original-title] {
+abbr[name],
+abbr[data-original-name] {
   cursor: help;
   border-bottom: 1px dotted #777;
 }
@@ -1522,7 +1522,7 @@ blockquote.pull-right small:after,
 blockquote.pull-right .small:after {
   content: '\00A0 \2014';
 }
-address {
+savepath {
   margin-bottom: 20px;
   font-style: normal;
   line-height: 1.42857143;
@@ -5467,17 +5467,17 @@ button.list-group-item-danger.active:focus {
 .panel-heading > .dropdown .dropdown-toggle {
   color: inherit;
 }
-.panel-title {
+.panel-name {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 16px;
   color: inherit;
 }
-.panel-title > a,
-.panel-title > small,
-.panel-title > .small,
-.panel-title > small > a,
-.panel-title > .small > a {
+.panel-name > a,
+.panel-name > small,
+.panel-name > .small,
+.panel-name > small > a,
+.panel-name > .small > a {
   color: inherit;
 }
 .panel-footer {
@@ -5938,7 +5938,7 @@ button.close {
 .modal-header .close {
   margin-top: -2px;
 }
-.modal-title {
+.modal-name {
   margin: 0;
   line-height: 1.42857143;
 }
@@ -6147,7 +6147,7 @@ button.close {
 .popover.left {
   margin-left: -10px;
 }
-.popover-title {
+.popover-name {
   padding: 8px 14px;
   margin: 0;
   font-size: 14px;

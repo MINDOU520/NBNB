@@ -118,7 +118,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="#">球服</a></li>
                                     <li><a href="#">球鞋</a></li>
-                                    <li><a href="#">篮球</a></li>
+                                    <li><a href="lanqiu.aspx">篮球</a></li>
                                     <li><a href="#">护具</a></li>
                                     <li><a href="#">其他</a></li>
                                 </ul>
@@ -158,7 +158,7 @@
 					<div class="col-sm-3 col-lg-3">
 						<div class="widget">
 							<h4>联系我们</h4>
-							<address><strong>商软三巨头</strong><br/>强无敌！！！ </address>
+							<strong>商软三巨头</strong><br/>强无敌！！！ 
                             <img src="img/erweima.png" width="80" height="80" />
 						</div>
 					</div>

@@ -1,83 +1,108 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NBNB.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Web.login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/login.css" rel="stylesheet" />
-<style type="text/css">
-    .auto-style1 {
-        width: 100%;
-        height: 498px;
-    }
-</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <div class="loginbg img-responsive">
-        <div class="loginbd">            
-            <table class="auto-style1">
-                <tr>
-                    <td><strong>用户名：</strong></td>
-                    <td>
-                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                    </td>
-                    <td>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="*"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>密码：</strong></td>
-                    <td>
-                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-                    </td>
-                    <td>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="*"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>验证码：</strong></td>
-                    <td>
-                        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-                    </td>
-                    <td>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox3" ErrorMessage="*"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>                        
-                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Web/yanzhengma.aspx" />                      
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>
-                        <asp:LinkButton ID="LinkButton1" runat="server">看不清？换一个！</asp:LinkButton>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>
-                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="登录" />
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>
-                        <asp:Label ID="Label1" runat="server"></asp:Label>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>
-                        没有账号？点这注册！
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-            </table>            
+            <div class="loginbd">     
+                <br />             
+                <h2>用户登录</h2>     
+                <table style="margin:auto;text-align:center;">     
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>           
+                    <tr>
+                        <td style="text-align:right"><strong>用户名：</strong>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtName" Display="Dynamic" ErrorMessage="*" ForeColor="Red">
+                            </asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right"><strong>密&nbsp;&nbsp;&nbsp;&nbsp;码：</strong>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPassword" Display="Dynamic" ErrorMessage="*" ForeColor="Red">
+                            </asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right"><strong>验证码：</strong>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtCheckcode" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="equiredFieldValidator1" runat="server" ControlToValidate="txtCheckcode" Display="Dynamic" ErrorMessage="*" ForeColor="Red">
+                            </asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            <img id="imgCode" alt="看不清，请点击我！" onclick="this.src=this.src+'?'" src="checkCode.aspx"/>看不清？请点击我
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            <asp:CheckBox ID="save" runat="server" Text="记住密码" />
+                            &nbsp <a href="findPassword.aspx" style="color:#808080;text-decoration:underline">忘记密码？</a>
+                        </td>
+                    </tr>                                   
+                </table>
+                <br />                
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="登录" />
+                <br />
+                <br />
+                <asp:Label ID="label1" runat="server" ForeColor="Red"></asp:Label>
+                <br />
+                <br />
+                <p>还不是NBNB用户？<a href="register.aspx">免费注册</a></p>
+            </div>
         </div>
     </div>
-    </div>
-    
 </asp:Content>

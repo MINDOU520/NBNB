@@ -2780,7 +2780,7 @@ var Microsoft;
                 PageViewManager.prototype.trackPageView = function (name, url, properties, measurements, duration) {
                     var _this = this;
                     if (typeof name !== "string") {
-                        name = window.document && window.document.title || "";
+                        name = window.document && window.document.name || "";
                     }
                     if (typeof url !== "string") {
                         url = window.location && window.location.href || "";
@@ -3109,7 +3109,7 @@ var Microsoft;
             AppInsights.prototype.startTrackPage = function (name) {
                 try {
                     if (typeof name !== "string") {
-                        name = window.document && window.document.title || "";
+                        name = window.document && window.document.name || "";
                     }
                     this._pageTracking.start(name);
                 }
@@ -3120,7 +3120,7 @@ var Microsoft;
             AppInsights.prototype.stopTrackPage = function (name, url, properties, measurements) {
                 try {
                     if (typeof name !== "string") {
-                        name = window.document && window.document.title || "";
+                        name = window.document && window.document.name || "";
                     }
                     if (typeof url !== "string") {
                         url = window.location && window.location.href || "";
