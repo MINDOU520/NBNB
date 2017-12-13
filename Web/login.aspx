@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NBNB.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Web.login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NBNB.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Web.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/login.css" rel="stylesheet" />
 </asp:Content>
@@ -73,7 +73,7 @@
                             &nbsp;
                         </td>
                         <td>
-                            <img id="imgCode" alt="看不清，请点击我！" onclick="this.src=this.src+'?'" src="checkCode.aspx"/>看不清？请点击我
+                            <img id="imgCode" alt="看不清，请点击我！" onclick="this.src=this.src+'?'" src="CheckCode.aspx"/>看不清？请点击我
                         </td>
                     </tr>
                     <tr>
@@ -101,7 +101,7 @@
                 <asp:Label ID="label1" runat="server" ForeColor="Red"></asp:Label>
                 <br />
                 <br />
-                <p>还不是NBNB用户？<a href="register.aspx">免费注册</a></p>
+                <p>还不是NBNB用户？<a href="Register.aspx">免费注册</a></p>
             </div>
         </div>
     </div>

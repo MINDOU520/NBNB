@@ -22,9 +22,20 @@ namespace BLL
             return CommodityService.SelectAll();
         }
 
-        public static DataTable SelectTop6()
+        public static DataTable SelectTop3()
         {
-            return CommodityService.SelectTop6();
+            return CommodityService.SelectTop3();
         }
+        public static DataTable SelectTop1()
+        {
+            return CommodityService.SelectTop1();
+        }
+
+        public static DataTable SelectID(object C_Id)
+        {
+            return CommodityService.SelectID(C_Id);
+        }
+
+       
     }
 }

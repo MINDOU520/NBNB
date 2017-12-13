@@ -1,47 +1,41 @@
-﻿using BLL;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Wuqi.Webdiyer;
 
 namespace Web
 {
-    public partial class Lanqiu : System.Web.UI.Page
+    public partial class Saishi : System.Web.UI.Page
     {
-        
         protected void Page_Load(object sender, EventArgs e)
         {
-           
             if (!IsPostBack)
-            {
-                BindCommodity();
+            {    
                 dlBind();
-               BindComm();
+               this.ViewState["Clicknum"] = 0;
+                Label5.Text = "(" + this.ViewState["Clicknum"].ToString() + ")人";
             }
         }
-       
-        private void BindComm()
+
+
+
+        protected void Button1_Click(object sender, EventArgs e)
         {
-            DataTable dt = BLL.CommodityManager.SelectAll();
-            if (dt != null && dt.Rows.Count != 0)
-            {
-                DataList1.DataSource = dt;
-                DataList1.DataBind();
-            }
+            this.ViewState["Clicknum"] = int.Parse(this.ViewState["Clicknum"].ToString() + 1);
+            Label5.Text= "(" + this.ViewState["Clicknum"].ToString() + ")人";
         }
-      
+
+
         private void dlBind()
         {
             int curpage = Convert.ToInt32(this.Label7.Text);
             PagedDataSource ps = new PagedDataSource();
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NBNB"].ConnectionString);
-            SqlDataAdapter oda = new SqlDataAdapter("select * from Commodity", con);
+            SqlDataAdapter oda = new SqlDataAdapter("select * from Saishi", con);
             DataSet ds = new DataSet();
             oda.Fill(ds);//这里是数据源
 
@@ -65,7 +59,7 @@ namespace Web
             }
             this.Label2.Text = Convert.ToString(ps.PageCount);
             this.DataList1.DataSource = ps;
-            this.DataList1.DataKeyField = "c_id";
+            this.DataList1.DataKeyField = "s_id";
             this.DataList1.DataBind();
         }
 
@@ -89,15 +83,5 @@ namespace Web
             this.Label7.Text = this.Label2.Text; //Label2.Text为总页数
             this.dlBind();
         }
-
-        private void BindCommodity()
-        {
-            DataTable dt = CommodityManager.SelectTop3();
-            if (dt != null && dt.Rows.Count != 0)
-            {
-                DataList1.DataSource = dt;
-                DataList1.DataBind();
-            }
-        }  
     }
 }

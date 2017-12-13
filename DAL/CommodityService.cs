@@ -30,10 +30,26 @@ namespace DAL
             return DBHelper.GetFillData(sql);
         }
 
-        public static DataTable SelectTop6()
+
+        public static DataTable SelectTop3()
         {
-            string sql = "Select top 6 * from Commodity";
+            string sql = "Select top 3 * from Commodity";
             DataTable dt = DBHelper.GetFillData(sql);
+            return dt;
+        }
+        public static DataTable SelectTop1()
+        {
+            string sql = "Select top 1 * from Commodity";
+            DataTable dt = DBHelper.GetFillData(sql);
+            return dt;
+        }
+        public static DataTable SelectID(object C_Id)
+        {
+            string sql = "select  * from Commodity  where c_id=@c_id";
+            SqlParameter[] sp = new SqlParameter[]{
+                new SqlParameter("@c_id", C_Id)
+            };
+            DataTable dt = DBHelper.GetFillData(sql, sp);
             return dt;
         }
     }

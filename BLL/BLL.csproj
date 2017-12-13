@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CommodityManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaishiManager.cs" />
     <Compile Include="UserManager.cs" />
     <Compile Include="VideoManager.cs" />
     <Compile Include="ZhanbaoManager.cs" />

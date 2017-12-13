@@ -10,7 +10,7 @@
 namespace Web {
     
     
-    public partial class addZhanbao {
+    public partial class AddZhanbao {
         
         /// <summary>
         /// form1 控件。

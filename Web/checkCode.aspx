@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="checkCode.aspx.cs" Inherits="Web.checkCode" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CheckCode.aspx.cs" Inherits="Web.CheckCode" %>
 
 <!DOCTYPE html>
 

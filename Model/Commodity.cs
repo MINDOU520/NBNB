@@ -15,7 +15,9 @@ namespace Model
         private string c_comment;                                           //商品评论
         private string c_commentnum;                                        //商品评论数目
         private string c_saled;                                             //商品出售
-        private string c_viewnum;                                           //商品视图
+        private string c_viewnum;                                           //商品浏览数
+        private string c_size;                                                //商品尺寸
+        private string c_color;                                                   //商品颜色
 
         public int C_Id
         {
@@ -61,6 +63,17 @@ namespace Model
         {
             get { return this.c_viewnum; }
             set { this.c_viewnum = value; }
+
+        }
+        public String C_Size
+        {
+           get { return this.c_size; }
+            set { this.c_size = value; }
+        }
+        public string C_Color
+        {
+            get { return this.c_color; }
+            set { this.c_color = value; }
         }
     }
 }

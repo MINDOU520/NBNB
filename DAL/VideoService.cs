@@ -86,6 +86,11 @@ namespace DAL
             return DBHelper.GetExcuteNonQuery(sql, sp);
         }
 
+        public static DataTable SelectTop4()
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// 更新数据
         /// </summary>
@@ -109,6 +114,12 @@ namespace DAL
             return DBHelper.GetFillData(sql);
         }
 
+        public static DataTable selectTop4()
+        {
+            string sql = "select  top 4  from Video order by V_Id desc";
+
+            return DBHelper.GetFillData(sql);
+        }
         /// <summary>
         /// 按住键查询
         /// </summary>

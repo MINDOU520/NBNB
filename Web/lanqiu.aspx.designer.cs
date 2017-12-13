@@ -10,7 +10,7 @@
 namespace Web {
     
     
-    public partial class lanqiu {
+    public partial class Lanqiu {
         
         /// <summary>
         /// DataList1 控件。

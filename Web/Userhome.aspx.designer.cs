@@ -10,33 +10,24 @@
 namespace Web {
     
     
-    public partial class Index {
+    public partial class Userhome {
         
         /// <summary>
-        /// Repeater1 控件。
+        /// DataList1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
+        protected global::System.Web.UI.WebControls.DataList DataList1;
         
         /// <summary>
-        /// videomore 控件。
+        /// NBNB 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink videomore;
-        
-        /// <summary>
-        /// VideoTopListView 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView VideoTopListView;
+        protected global::System.Web.UI.WebControls.SqlDataSource NBNB;
     }
 }

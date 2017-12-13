@@ -9,7 +9,7 @@ namespace Model
 
     public class Users
     {
-        private string userId;
+        private int userId;
         private string username;
         private string userpassword;
         private string useremail;
@@ -19,7 +19,7 @@ namespace Model
         private string userweight;
         private string userage;
 
-        public string UserId
+        public int UserId
         {
             get { return this.userId; }
             set { this.userId = value; }

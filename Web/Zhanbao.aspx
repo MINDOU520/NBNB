@@ -3,13 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class ="container">
     <div style="clear: both; margin-bottom: 30px; overflow: hidden;">
-        <div style="width: 1080px; margin-top: 15px; border-radius: 3px; padding-top: 10px; overflow: hidden;">
-            <div style="padding: 5px; float: left; width: 8%; border-bottom: 2px solid steelblue; overflow: hidden;" onclick="titleClick(1)">
+        <div style="width: 100%; margin-top: 15px; border-radius: 3px; padding-top: 10px; overflow: hidden;">
+            <div style="padding: 5px; float: left; width: 12%; border-bottom: 2px solid steelblue; overflow: hidden;" onclick="titleClick(1)">
                 <asp:HyperLink ID="kcLink" runat="server" CssClass="ch" Text="战报资讯" NavigateUrl="#" Font-Names="微软雅黑" Font-Size="16" Font-Underline="false"></asp:HyperLink>
             </div>
 
-            <div style="float: left; position: relative; width: 91%; padding-top: 10px; height: 29px; border-bottom: 2px solid #e3e3e5; overflow: hidden; font-size: 15px; color: #555555; font-family: 'Microsoft YaHei'; text-align: right;">
+            <div style="float: left; position: relative; width:100%; padding-top: 10px; height: 29px; border-bottom: 2px solid #e3e3e5; overflow: hidden; font-size: 15px; color: #555555; font-family: 'Microsoft YaHei'; text-align: right;">
                 <div style="position: absolute; right: 5px; bottom: 2px; font-size: 15px; color: #555555; font-family: 'Microsoft YaHei'; text-align: right;">
                     当前位置：
                             <asp:HyperLink ID="HyperLink1" runat="server" Text="首页/" NavigateUrl="~/WebForm1.aspx" Font-Underline="false" ForeColor="#555555"></asp:HyperLink>
@@ -43,7 +44,7 @@
                 <ItemTemplate>
                     <div style="font-family: 'Microsoft YaHei'; border-bottom: 1px dashed #e3e3e5; padding: 5px; overflow: hidden;">
                         <div style="float: left; padding: 5px; width: 80%;">
-                            <asp:HyperLink ID="HyperLink1" runat="server" Font-Names="微软雅黑" ToolTip='<%#"点击查看："+ Eval("z_title") %>' Font-Size="12" NavigateUrl='<%#"~/ZhanbaoDetail.aspx?id="+Eval("z_id") %>' ForeColor="#2b2b2b" Font-Underline="false" Text='<%#Eval("z_title") %>' onmouseover="this.style.textDecoration='underline';this.style.color='steelblue';" onmouseout="this.style.textDecoration='none';this.style.color='#2b2b2b'"></asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink1" runat="server" Font-Names="微软雅黑" ToolTip='<%#"点击查看："+ Eval("z_title") %>' Font-Size="12" NavigateUrl='<%#"~/ZhanbaoDetail.aspx?id="+Eval("z_id") %>' ForeColor="#2b2b2b" Font-Underline="false" Text='<%#Eval("z_title") %>'></asp:HyperLink>
                         </div>
                         <div style="float: right; padding: 5px; width: 12%;">
                             <asp:Label ID="Label1" runat="server" Font-Names="微软雅黑" Font-Size="10" Text='<%#String.Format("{0:yyyy-MM-dd hh:mm}",Eval("z_time")) %>' ForeColor="gray"></asp:Label>
@@ -52,6 +53,8 @@
                 </ItemTemplate>
             </asp:ListView>
         </div>
+
+    </div>
 
     </div>
 </asp:Content>

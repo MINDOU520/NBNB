@@ -12,7 +12,7 @@ using Model;
 using BLL;
 namespace Web
 {
-    public partial class login : System.Web.UI.Page
+    public partial class Login : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,7 +32,9 @@ namespace Web
                     SqlDataReader dr = UserManager.Login(UserName, UserPassword);
                     if (dr.Read())
                     {
-                        Session["UserName"] = dr[0].ToString();
+                        Session["UserName"] = dr[1].ToString();
+                        Session["UserId"] = dr[0];
+                                                
                         Response.Redirect("~/index.aspx");
                     }
                     else

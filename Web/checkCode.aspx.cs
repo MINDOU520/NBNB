@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Drawing;
 namespace Web
 {
-    public partial class checkCode : System.Web.UI.Page
+    public partial class CheckCode : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

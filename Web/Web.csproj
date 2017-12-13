@@ -106,7 +106,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="addZhanbao.aspx" />
+    <Content Include="AddSaishi.aspx" />
+    <Content Include="AddZhanbao.aspx" />
+    <Content Include="css\userhome.css" />
+    <Content Include="img\1.jpg" />
+    <Content Include="img\shangpin\C2.jpg" />
+    <Content Include="img\shangpin\goumai.png" />
+    <Content Include="img\shangpin\gouwuche.png" />
     <Content Include="bin\AspNetPager.dll" />
     <Content Include="bootstrap\css\bootstrap-theme.css" />
     <Content Include="bootstrap\css\bootstrap-theme.min.css" />
@@ -116,7 +122,7 @@
     <Content Include="bootstrap\js\bootstrap.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\npm.js" />
-    <Content Include="checkCode.aspx" />
+    <Content Include="CheckCode.aspx" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\build-config.js" />
     <Content Include="ckeditor\ckeditor.js" />
@@ -1021,12 +1027,10 @@
     <Content Include="css\index.css" />
     <Content Include="css\login.css" />
     <Content Include="css\style.css" />
-    <Content Include="img\1.jpg" />
     <Content Include="img\download.png" />
     <Content Include="img\downloadNum.png" />
     <Content Include="img\download_pronpt.png" />
-    <Content Include="img\shangpin\C1.png" />
-    <Content Include="img\shangpin\C2.jpg" />
+    <Content Include="img\shangpin\C1.jpg" />
     <Content Include="img\shangpin\C3.jpg" />
     <Content Include="img\shangpin\C4.jpg" />
     <Content Include="img\shangpin\C5.jpg" />
@@ -1039,13 +1043,14 @@
     <Content Include="img\erweima.png" />
     <Content Include="img\logo.png" />
     <Content Include="js\backtop.js" />
-    <Content Include="login.aspx" />
+    <Content Include="js\drop-down.js" />
+    <Content Include="Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="NBNB.Master" />
-    <Content Include="index.aspx" />
+    <Content Include="Index.aspx" />
     <Content Include="bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="bootstrap\css\bootstrap-theme.min.css.map" />
     <Content Include="bootstrap\css\bootstrap.css.map" />
@@ -1055,15 +1060,17 @@
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="PlayVideo.aspx" />
-    <Content Include="register.aspx" />
-    <Content Include="lanqiu.aspx" />
-    <Content Include="shangpinzhanshi.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Lanqiu.aspx" />
+    <Content Include="Saishi.aspx" />
+    <Content Include="Shangpinzhanshi.aspx" />
     <Content Include="styles.js" />
     <Content Include="Video\4.mp4" />
     <Content Include="Video\2.mp4" />
     <Content Include="Video\3.mp4" />
     <Content Include="Video\1.mp4" />
     <Content Include="Video\testVideo.mp4" />
+    <Content Include="Userhome.aspx" />
     <Content Include="Zhanbao.aspx" />
     <Content Include="ZhanbaoDetail.aspx" />
     <Content Include="LICENSE.md" />
@@ -1101,29 +1108,36 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addZhanbao.aspx.cs">
-      <DependentUpon>addZhanbao.aspx</DependentUpon>
+    <Compile Include="AddSaishi.aspx.cs">
+      <DependentUpon>AddSaishi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="addZhanbao.aspx.designer.cs">
-      <DependentUpon>addZhanbao.aspx</DependentUpon>
+    <Compile Include="AddSaishi.aspx.designer.cs">
+      <DependentUpon>AddSaishi.aspx</DependentUpon>
     </Compile>
-    <Compile Include="checkCode.aspx.cs">
-      <DependentUpon>checkCode.aspx</DependentUpon>
+    <Compile Include="AddZhanbao.aspx.cs">
+      <DependentUpon>AddZhanbao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="checkCode.aspx.designer.cs">
-      <DependentUpon>checkCode.aspx</DependentUpon>
+    <Compile Include="AddZhanbao.aspx.designer.cs">
+      <DependentUpon>AddZhanbao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckCode.aspx.cs">
+      <DependentUpon>CheckCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckCode.aspx.designer.cs">
+      <DependentUpon>CheckCode.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="login.aspx.cs">
-      <DependentUpon>login.aspx</DependentUpon>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="login.aspx.designer.cs">
-      <DependentUpon>login.aspx</DependentUpon>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="NBNB.Master.cs">
       <DependentUpon>NBNB.Master</DependentUpon>
@@ -1140,33 +1154,47 @@
       <DependentUpon>PlayVideo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="register.aspx.cs">
-      <DependentUpon>register.aspx</DependentUpon>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="register.aspx.designer.cs">
-      <DependentUpon>register.aspx</DependentUpon>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="lanqiu.aspx.cs">
-      <DependentUpon>lanqiu.aspx</DependentUpon>
+    <Compile Include="Lanqiu.aspx.cs">
+      <DependentUpon>Lanqiu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="lanqiu.aspx.designer.cs">
-      <DependentUpon>lanqiu.aspx</DependentUpon>
+    <Compile Include="Lanqiu.aspx.designer.cs">
+      <DependentUpon>Lanqiu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="shangpinzhanshi.aspx.cs">
-      <DependentUpon>shangpinzhanshi.aspx</DependentUpon>
+    <Compile Include="Saishi.aspx.cs">
+      <DependentUpon>Saishi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="shangpinzhanshi.aspx.designer.cs">
-      <DependentUpon>shangpinzhanshi.aspx</DependentUpon>
+    <Compile Include="Saishi.aspx.designer.cs">
+      <DependentUpon>Saishi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shangpinzhanshi.aspx.cs">
+      <DependentUpon>Shangpinzhanshi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shangpinzhanshi.aspx.designer.cs">
+      <DependentUpon>Shangpinzhanshi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Userhome.aspx.cs">
+      <DependentUpon>Userhome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Userhome.aspx.designer.cs">
+      <DependentUpon>Userhome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Zhanbao.aspx.cs">
       <DependentUpon>Zhanbao.aspx</DependentUpon>

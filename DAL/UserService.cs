@@ -1,6 +1,7 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -44,6 +45,16 @@ namespace DAL
             };
             return DBHelper.GetDataReader(sql, sp);
 
+        }
+
+        public static DataTable SelectID(int UserId)
+        {
+            string sql = "select  * from Users  where userid=@userid";
+            SqlParameter[] sp = new SqlParameter[]{
+                new SqlParameter("@userid",UserId)
+            };
+            DataTable dt = DBHelper.GetFillData(sql, sp);
+            return dt;
         }
     }
 }

@@ -89,13 +89,16 @@ namespace BLL
         {
             return VideoService.selectTop(top);
         }
-
-    /// <summary>
-    /// 更新点击量
-    /// </summary>
-    /// <param name="V_Id"></param>
-    /// <returns></returns>
-    public static int updateClickNum(int V_Id)
+        public static DataTable SelectTop4()
+        {
+            return VideoService.SelectTop4();
+        }
+        /// <summary>
+        /// 更新点击量
+        /// </summary>
+        /// <param name="V_Id"></param>
+        /// <returns></returns>
+        public static int updateClickNum(int V_Id)
         {
             return VideoService.updatev_clickNum(V_Id);
         }

@@ -2,6 +2,7 @@
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -23,5 +24,10 @@ namespace BLL
         {
             return UserService.Login(username, userpassword);
         }
+        public static DataTable SelectID(int UserId)
+        {
+            return UserService.SelectID(UserId);
+        }
+
     }
 }

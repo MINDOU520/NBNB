@@ -4,12 +4,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
     <div style="clear: both; margin-bottom: 30px; overflow: hidden;">
-        <div style="width: 1080px; margin-top: 15px; border-radius: 3px; padding-top: 10px; overflow: hidden;">
+        <div style="width: 100%; margin-top: 15px; border-radius: 3px; padding-top: 10px; overflow: hidden;">
             <div style="padding: 5px; float: left; width: 12%; border-bottom: 2px solid steelblue; overflow: hidden;" onclick="titleClick(1)">
                 <asp:HyperLink ID="kcLink" runat="server" CssClass="ch" Text="战报阅读" NavigateUrl="#" Font-Names="微软雅黑" Font-Size="16" Font-Underline="false"></asp:HyperLink>
             </div>
 
-            <div style="float: left; position: relative; width: 91%; padding-top: 10px; height: 29px; border-bottom: 2px solid #e3e3e5; overflow: hidden; font-size: 15px; color: #555555; font-family: 'Microsoft YaHei'; text-align: right;">
+            <div style="float: left; position: relative; width:100%; padding-top: 10px; height: 29px; border-bottom: 2px solid #e3e3e5; overflow: hidden; font-size: 15px; color: #555555; font-family: 'Microsoft YaHei'; text-align: right;">
                 <div style="position: absolute; right: 5px; bottom: 2px; font-size: 15px; color: #555555; font-family: 'Microsoft YaHei'; text-align: right;">
                     当前位置：
                             <asp:HyperLink ID="HyperLink1" runat="server" Text="首页/" NavigateUrl="~/index.aspx" Font-Underline="false" ForeColor="#555555"></asp:HyperLink>
@@ -20,7 +20,7 @@
         </div>
         <div>
             <div style="margin-top: 10px; font-family: 'Microsoft YaHei';">
-                 <div id="left" style="width: 68%; border-right: 2px solid #e3e3e5; float: left; overflow: hidden; margin-right: 0px; margin-bottom: -3000px; padding-bottom: 3000px;">
+                 <div id="left" style="width: 75%; border-right: 2px solid #e3e3e5; float: left; overflow: hidden; margin-right: 0px; margin-bottom: -3000px; padding-bottom: 3000px;">
                   
                     <div style="text-align: center; color: #2b2b2b; font-size: 18px;">
                         <asp:Label ID="txtNTitle" runat="server" Text="" ForeColor="#2b2b2b" Font-Size="18"></asp:Label>
@@ -37,7 +37,7 @@
                    </div>
                   
 
-                <div id="right" style="float: left; margin-left: 10px; width: 30%; overflow: hidden; color: #555555; margin-bottom: -3000px; padding-bottom: 3000px;">
+                <div id="right" style="float: left; margin-left: 10px; width: 23%; overflow: hidden; color: #555555; margin-bottom: -3000px; padding-bottom: 3000px;">
                     <div style="border-left: 3px solid #3366cc; padding-left: 5px; font-family: 'Microsoft YaHei'; color: #2b2b2b;">
                         <asp:HyperLink ID="HyperLink5" runat="server" Target="_blank" Text="最新" Font-Size="15" NavigateUrl="~/News.aspx" ForeColor="#2b2b2b" Font-Underline="false">
                         </asp:HyperLink>

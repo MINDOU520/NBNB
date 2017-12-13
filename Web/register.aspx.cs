@@ -14,7 +14,7 @@ using BLL;
 
 namespace Web
 {
-    public partial class register : System.Web.UI.Page
+    public partial class Register : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="addZhanbao.aspx.cs" Inherits="Web.addZhanbao" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddZhanbao.aspx.cs" Inherits="Web.AddZhanbao" %>
 <%@Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor"%>
 <!DOCTYPE html>
 
@@ -13,7 +13,7 @@
             <h2><p style="margin-left:400px">发布战报</p></h2>
             <h4>
                 <p class="text-left">
-                请输入标题：<asp:TextBox ID="txtTitle" runat="server" Height="30px" Width="400px"></asp:TextBox>
+                请输入战报标题：<asp:TextBox ID="txtTitle" runat="server" Height="30px" Width="400px"></asp:TextBox>
                 </p>
             </h4>
             <h4><p>请输入详细的战报内容：</p></h4>

@@ -10,7 +10,7 @@
 namespace Web {
     
     
-    public partial class login {
+    public partial class Login {
         
         /// <summary>
         /// txtName 控件。

@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace Web
 {
-    public partial class index : System.Web.UI.Page
+    public partial class Index : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,7 +22,7 @@ namespace Web
 
         private void BindVideo()
         {
-            DataTable dt = VideoManager.selectTop(5);
+            DataTable dt = VideoManager.selectTop(4);
             if (dt != null && dt.Rows.Count != 0)
             {
                 VideoTopListView.DataSource = dt;

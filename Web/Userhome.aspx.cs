@@ -9,25 +9,26 @@ using System.Web.UI.WebControls;
 
 namespace Web
 {
-    public partial class Shangpinzhanshi : System.Web.UI.Page
+    public partial class Userhome : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                BindCommodity();
-
+            
+                BindUser();
             }
 
         }
-        private void BindCommodity()
+
+     
+
+        private void BindUser()
         {
 
-            int id = Request.QueryString["id"] !=null ? int.Parse(Request.QueryString["id"]): 0;
-
-            if (id != 0)
+            if (Session["UserId"] != null && (int)Session["UserId"] != 0)
             {
-                DataTable dt = CommodityManager.SelectID(id);
+                DataTable dt = UserManager.SelectID((int)Session["UserId"]);
 
                 if (dt != null && dt.Rows.Count != 0)
                 {
@@ -36,10 +37,7 @@ namespace Web
                 }
             }
 
-            
+          
         }
-
-
-
     }
 }

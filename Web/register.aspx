@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NBNB.Master" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="Web.register" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NBNB.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Web.Register" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/login.css" rel="stylesheet" />
 </asp:Content>
@@ -67,7 +67,7 @@
                
                
                
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                
                
                
