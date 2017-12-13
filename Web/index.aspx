@@ -1,4 +1,4 @@
-﻿4<%@ Page Title="" Language="C#" MasterPageFile="~/NBNB.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Web.Index" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NBNB.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Web.Index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/index.css" rel="stylesheet" />
 </asp:Content>
