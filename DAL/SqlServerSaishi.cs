@@ -6,12 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using IDAL;
 
 namespace DAL
 {
-   public class SaishiService
+   public class SqlServerSaishi:ISaishi
     {
-        public static int Insert(Saishi ns)
+        public int Insert(Saishi ns)
         {
             string sql = "insert into Saishi values(@s_name,@s_time,@s_adder)";
             SqlParameter[] sp = new SqlParameter[]{new SqlParameter("@s_name",ns.S_Name),
@@ -20,7 +21,7 @@ namespace DAL
             return DBHelper.GetExcuteNonQuery(sql, sp);
         }
 
-        public static DataTable SelectID(int S_Id)
+        public  DataTable SelectID(int S_Id)
         {
             string sql = "select  * from saishi where s_id=@s_id";
             SqlParameter[] sp = new SqlParameter[]{

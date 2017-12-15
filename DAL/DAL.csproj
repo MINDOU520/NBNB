@@ -41,15 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommodityService.cs" />
+    <Compile Include="SqlServerCommodity.cs" />
     <Compile Include="DBHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SaishiService.cs" />
-    <Compile Include="UserService.cs" />
-    <Compile Include="VideoService.cs" />
-    <Compile Include="ZhanbaoService.cs" />
+    <Compile Include="SqlServerSaishi.cs" />
+    <Compile Include="SqlServerUser.cs" />
+    <Compile Include="SqlServerVideo.cs" />
+    <Compile Include="SqlServerZhanbao.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IDAL\IDAL.csproj">
+      <Project>{c8987d8c-d9b0-43ad-87f1-9c207f934c8c}</Project>
+      <Name>IDAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{653aded3-85e3-4096-9e07-5f0fea86fc07}</Project>
       <Name>Model</Name>

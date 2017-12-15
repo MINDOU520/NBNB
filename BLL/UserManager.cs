@@ -1,4 +1,6 @@
 ﻿using DAL;
+using DALFactory;
+using IDAL;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -12,22 +14,22 @@ namespace BLL
 {
     public class UserManager
     {
-        public static SqlDataReader SelectName(string username)
+        private static IUsers iusers= DataAccess.CreateUser();
+        public static DataTable SelectID(int UserId)
         {
-            return UserService.SelectName(username);
+            return iusers.SelectID(UserId);
+        }
+        public static SqlDataReader SelectName(string name)
+        {
+            return iusers.SelectName(name);
         }
         public static int AddUser(Users us)
         {
-            return UserService.Insert(us);
+            return iusers.Insert(us);
         }
         public static SqlDataReader Login(string username, string userpassword)
         {
-            return UserService.Login(username, userpassword);
+            return iusers.Login(username, userpassword);
         }
-        public static DataTable SelectID(int UserId)
-        {
-            return UserService.SelectID(UserId);
-        }
-
     }
 }

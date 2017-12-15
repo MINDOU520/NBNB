@@ -48,9 +48,17 @@
     <Compile Include="ZhanbaoManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DALFactory\DALFactory.csproj">
+      <Project>{04C3EB6B-78BF-41C0-BCC9-F24F563E1CEB}</Project>
+      <Name>DALFactory</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{1cc07e8e-8d57-4241-94f1-e1641c932f67}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IDAL\IDAL.csproj">
+      <Project>{C8987D8C-D9B0-43AD-87F1-9C207F934C8C}</Project>
+      <Name>IDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{653aded3-85e3-4096-9e07-5f0fea86fc07}</Project>

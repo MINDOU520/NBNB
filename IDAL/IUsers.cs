@@ -14,6 +14,7 @@ namespace IDAL
         SqlDataReader SelectName(string username);
         int Insert(Users us);
         SqlDataReader Login(string username, string password);
+        DataTable SelectID(int UserId);
 
 
     }

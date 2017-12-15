@@ -6,12 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using DALFactory;
+using IDAL;
 
 namespace BLL
 {
     public  class VideoManager
     {
-
+        private static IVideo ivideo = DataAccess.CreateVideo();
         /// <summary>
         /// 添加记录
         /// </summary>
@@ -19,7 +21,7 @@ namespace BLL
         /// <returns>返回受影响行数</returns>
         public static int addVideo(Video video)
         {
-            return VideoService.addVideo(video);
+            return ivideo.addVideo(video);
         }
 
         /// <summary>
@@ -29,7 +31,7 @@ namespace BLL
         /// <returns>返回受影响行数</returns>
         public static int addNumVideo(List<Video> videoes)
         {
-            return VideoService.addNumVideo(videoes);
+            return ivideo.addNumVideo(videoes);
         }
 
         /// <summary>
@@ -38,7 +40,7 @@ namespace BLL
         /// <returns>返回受影响行数</returns>
         public static int deleteAll()
         {
-            return VideoService.deleteAll();
+            return ivideo.deleteAll();
         }
 
         /// <summary>
@@ -48,7 +50,7 @@ namespace BLL
         /// <returns>返回受影响行数</returns>
         public static int deleteKey(int V_Id)
         {
-            return VideoService.deleteKey(V_Id);
+            return ivideo.deleteKey(V_Id);
         }
 
         /// <summary>
@@ -58,7 +60,7 @@ namespace BLL
         /// <returns>返回受影响行数</returns>
         public static int updateVideo(Video video)
         {
-            return VideoService.updateVideo(video);
+            return ivideo.updateVideo(video);
         }
 
         /// <summary>
@@ -67,7 +69,7 @@ namespace BLL
         /// <returns>返回查询结果</returns>
         public static DataTable selectAll()
         {
-            return VideoService.selectAll();
+            return ivideo.selectAll();
         }
 
     /// <summary>
@@ -77,7 +79,7 @@ namespace BLL
     /// <returns>返回查询结果</returns>
     public static DataTable selectKey(int V_Id)
         {
-            return VideoService.selectKey(V_Id);
+            return ivideo.selectKey(V_Id);
         }
 
         /// <summary>
@@ -87,11 +89,11 @@ namespace BLL
         /// <returns></returns>
         public static DataTable selectTop(int top)
         {
-            return VideoService.selectTop(top);
+            return ivideo.selectTop(top);
         }
         public static DataTable SelectTop4()
         {
-            return VideoService.SelectTop4();
+            return ivideo.SelectTop4();
         }
         /// <summary>
         /// 更新点击量
@@ -100,7 +102,7 @@ namespace BLL
         /// <returns></returns>
         public static int updateClickNum(int V_Id)
         {
-            return VideoService.updatev_clickNum(V_Id);
+            return ivideo.updatev_clickNum(V_Id);
         }
 
     /// <summary>
@@ -110,7 +112,7 @@ namespace BLL
     /// <returns></returns>
     public static int updateDownLoadNum(int V_Id)
         {
-            return VideoService.updatev_downloadNum(V_Id);
+            return ivideo.updatev_downloadNum(V_Id);
         }
 
         //public static List<ModelCourse.mySearch> selectKeyWord(string kw)

@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using IDAL;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class UserService
+    public class SqlServerUser:IUsers
     {
-        public static SqlDataReader SelectName(string username)
+        public  SqlDataReader SelectName(string username)
         {
             string sql = "select * from Users where username=@username";
             SqlParameter[] sp = new SqlParameter[]{
@@ -20,7 +21,7 @@ namespace DAL
             return DBHelper.GetDataReader(sql, sp);
         }
 
-        public static int Insert(Users us)
+        public  int Insert(Users us)
         {
             string sql = "insert into Users values(@username,@userpassword)";
             SqlParameter[] sp = new SqlParameter[]{
@@ -36,7 +37,7 @@ namespace DAL
             };
             return DBHelper.GetExcuteNonQuery(sql, sp);
         }
-        public static SqlDataReader Login(string username, string userpassword)
+        public  SqlDataReader Login(string username, string userpassword)
         {
             string sql = "select * from Users where username=@username and userpassword=@userpassword";
             SqlParameter[] sp = new SqlParameter[]{
@@ -47,7 +48,7 @@ namespace DAL
 
         }
 
-        public static DataTable SelectID(int UserId)
+        public  DataTable SelectID(int UserId)
         {
             string sql = "select  * from Users  where userid=@userid";
             SqlParameter[] sp = new SqlParameter[]{
@@ -56,5 +57,6 @@ namespace DAL
             DataTable dt = DBHelper.GetFillData(sql, sp);
             return dt;
         }
+      
     }
 }

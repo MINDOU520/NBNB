@@ -1,4 +1,6 @@
 ﻿using DAL;
+using DALFactory;
+using IDAL;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -12,25 +14,26 @@ namespace BLL
 {
     public class ZhanbaoManager
     {
+        private static IZhanbao izhanbao = DataAccess.CreateZhanbao();
         public static DataTable SelectTop5()
         {
-            return ZhanbaoService.SelectTop5();
+            return izhanbao.SelectTop5();
         }
         public static DataTable SelectAll()
         {
-            return ZhanbaoService.SelectAll();
+            return izhanbao.SelectAll();
         }
         public static DataTable SelectID(int Z_Id)
         {
-            return ZhanbaoService.SelectID(Z_Id);
+            return izhanbao.SelectID(Z_Id);
         }
         public static DataTable SelectTop(int top)
         {
-            return ZhanbaoService.SelectTop(top);
+            return izhanbao.SelectTop(top);
         }
         public static int AddZhanbao(Zhanbao ns)
         {
-            return ZhanbaoService.Insert(ns);
+            return izhanbao.Insert(ns);
         }
     }
 }

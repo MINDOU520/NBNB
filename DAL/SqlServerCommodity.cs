@@ -6,13 +6,14 @@ using System.Text;
 using Model;
 using System.Threading.Tasks;
 using System.Data;
+using IDAL;
 
 namespace DAL
 {
-     public  class CommodityService
+     public  class SqlServerCommodity:ICommodity
     {
 
-        public static int Insert(Commodity cm)
+        public int Insert(Commodity cm)
         {
             string sql = "insert into Commodity values(@c_name,@c_photo,@c_price)";
             SqlParameter[] sp = new SqlParameter[]{
@@ -24,26 +25,26 @@ namespace DAL
             };
             return DBHelper.GetExcuteNonQuery(sql, sp);
         }
-        public static DataTable SelectAll()
+        public  DataTable SelectAll()
         {
             string sql = "select  * from Commodity";
             return DBHelper.GetFillData(sql);
         }
 
 
-        public static DataTable SelectTop3()
+        public DataTable SelectTop3()
         {
             string sql = "Select top 3 * from Commodity";
             DataTable dt = DBHelper.GetFillData(sql);
             return dt;
         }
-        public static DataTable SelectTop1()
+        public  DataTable SelectTop1()
         {
             string sql = "Select top 1 * from Commodity";
             DataTable dt = DBHelper.GetFillData(sql);
             return dt;
         }
-        public static DataTable SelectID(object C_Id)
+        public  DataTable SelectID(object C_Id)
         {
             string sql = "select  * from Commodity  where c_id=@c_id";
             SqlParameter[] sp = new SqlParameter[]{

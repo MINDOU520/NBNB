@@ -12,7 +12,7 @@
                <table>
                     <tr>
                         <td rowspan="2">
-                            <asp:ImageButton ID="ImageButton1" runat="server" Height="45px" Width="45px" ImageUrl='<%#Eval("usertouxiang") %>' postbackUrl='<%#"~/#.aspx?id="+Eval("userid") %>' />
+                            <asp:ImageButton ID="ImageButton1" runat="server" Height="45px" Width="45px"/>
                         </td>
                         <td >
                           <asp:HyperLink ID="HyperLink1" runat="server" Font-Names="微软雅黑" ToolTip='<%#"点击查看："+ Eval("s_name") %>' Font-Size="12" NavigateUrl='<%#"~/#.aspx?id="+Eval("s_id") %>' ForeColor="#2b2b2b" Font-Underline="false" Text='<%#Eval("s_name") %>'></asp:HyperLink>

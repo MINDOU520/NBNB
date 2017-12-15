@@ -6,17 +6,18 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IDAL;
 
 namespace DAL
 {
-    public class VideoService
+    public class SqlServerVideo:IVideo
     {
         /// <summary>
         /// 参数赋值
         /// </summary>
         /// <param name="video"></param>
         /// <returns>返回参数数组</returns>
-        private static SqlParameter[] AssignParameter(Video video)
+        private  SqlParameter[] AssignParameter(Video video)
         {
             SqlParameter[] sp = new SqlParameter[]{
 
@@ -37,7 +38,7 @@ namespace DAL
         /// </summary>
         /// <param name="video"></param>
         /// <returns>返回受影响行数</returns>
-        public static int addVideo(Video video)
+        public  int addVideo(Video video)
         {
             string sql = "insert into Video(v_name,v_time,v_savepath,v_clickNum,v_downloadNum,v_screenImg) values(@v_name,@v_time,@v_savepath,@v_clickNum,@v_downloadNum,@v_screenImg)";
 
@@ -49,7 +50,7 @@ namespace DAL
         /// </summary>
         /// <param name="videoes">添加的数据</param>
         /// <returns>返回受影响行数</returns>
-        public static int addNumVideo(List<Video> videoes)
+        public  int addNumVideo(List<Video> videoes)
         {
             int sum = 0;
             foreach (Video item in videoes)
@@ -64,7 +65,7 @@ namespace DAL
         /// 删除全部数据
         /// </summary>
         /// <returns>返回受影响行数</returns>
-        public static int deleteAll()
+        public int deleteAll()
         {
             string sql = "truncate table Video";
 
@@ -76,7 +77,7 @@ namespace DAL
         /// </summary>
         /// <param name="V_Id"></param>
         /// <returns>返回受影响行数</returns>
-        public static int deleteKey(int V_Id)
+        public  int deleteKey(int V_Id)
         {
             string sql = "delete from Video where V_Id=@V_Id";
             SqlParameter[] sp = new SqlParameter[]{
@@ -86,7 +87,7 @@ namespace DAL
             return DBHelper.GetExcuteNonQuery(sql, sp);
         }
 
-        public static DataTable SelectTop4()
+        public  DataTable SelectTop4()
         {
             throw new NotImplementedException();
         }
@@ -96,7 +97,7 @@ namespace DAL
         /// </summary>
         /// <param name="video"></param>
         /// <returns>返回受影响行数</returns>
-        public static int updateVideo(Video video)
+        public  int updateVideo(Video video)
         {
             string sql = "update Video set v_name=@v_name,v_time=@v_time,v_savepath=@v_savepath,v_clickNum=@v_clickNum,v_downloadNum=@v_downloadNum,v_screenImg=@v_screenImg where V_Id=@V_Id";
 
@@ -107,14 +108,14 @@ namespace DAL
         /// 查询所有数据
         /// </summary>
         /// <returns>返回查询结果</returns>
-        public static DataTable selectAll()
+        public  DataTable selectAll()
         {
             string sql = "select * from Video";
 
             return DBHelper.GetFillData(sql);
         }
 
-        public static DataTable selectTop4()
+        public DataTable selectTop4()
         {
             string sql = "select  top 4  from Video order by V_Id desc";
 
@@ -125,7 +126,7 @@ namespace DAL
         /// </summary>
         /// <param name="V_Id"></param>
         /// <returns>返回查询结果</returns>
-        public static DataTable selectKey(int V_Id)
+        public DataTable selectKey(int V_Id)
         {
             string sql = "select * from Video where V_Id=@V_Id";
             SqlParameter[] sp = new SqlParameter[]{
@@ -140,7 +141,7 @@ namespace DAL
         /// </summary>
         /// <param name="top"></param>
         /// <returns></returns>
-        public static DataTable selectTop(int top)
+        public  DataTable selectTop(int top)
         {
             string sql = "select top " + top + " * from Video order by v_clickNum+v_downloadNum desc, v_clickNum desc,v_downloadNum desc,v_time desc";
 
@@ -152,7 +153,7 @@ namespace DAL
         /// </summary>
         /// <param name="V_Id"></param>
         /// <returns></returns>
-        public static int updatev_clickNum(int V_Id)
+        public int updatev_clickNum(int V_Id)
         {
             string sql = "update Video set v_clickNum=v_clickNum+1 where V_Id=@V_Id";
             SqlParameter[] sp = new SqlParameter[]{
@@ -166,7 +167,7 @@ namespace DAL
         /// </summary>
         /// <param name="V_Id"></param>
         /// <returns></returns>
-        public static int updatev_downloadNum(int V_Id)
+        public int updatev_downloadNum(int V_Id)
         {
             string sql = "update Video set v_downloadNum=v_downloadNum+1 where V_Id=@V_Id";
             SqlParameter[] sp = new SqlParameter[]{
@@ -175,7 +176,7 @@ namespace DAL
             return DBHelper.GetExcuteNonQuery(sql, sp);
         }
 
-        public static DataTable selectKeyWord(string kw)
+        public DataTable selectKeyWord(string kw)
         {
             string sql = "select * from Video where v_name like @kw";
             SqlParameter[] sp = new SqlParameter[]{
@@ -184,5 +185,14 @@ namespace DAL
             return DBHelper.GetFillData(sql, sp);
         }
 
+        public int updateClickNum(int V_Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int updateDownLoadNum(int V_Id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
