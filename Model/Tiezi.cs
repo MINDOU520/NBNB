@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Tiezi
+    public  class Tiezi
     {
-        private string t_id;                //帖子编号
-        private string userid;              //用户编号
+        private int  t_id;                //帖子编号
+        private int userid;              //用户编号
         private DateTime t_time;            // 帖子时间
         private string t_viewnum;           //
+        private string t_content;
         private string t_c_id;              //帖子评论编号
         private string t_commentnum;        //帖子评论数
         private string t_dianzannum;        //帖子点赞数
@@ -19,15 +20,21 @@ namespace Model
         private string p_id;                //图片编号
         private string v_id;                //视频编号
 
-        public string T_Id
+        public int  T_Id
         {
             get { return this.t_id; }
             set { this.t_id = value; }
         }
-        public string UserId
+        public int UserId
         {
             get { return this.userid; }
             set { this.userid = value; }
+        }
+
+        public string T_Content
+        {
+            get { return this.t_content; }
+            set { this.t_content = value; }
         }
         public DateTime T_Time
         {

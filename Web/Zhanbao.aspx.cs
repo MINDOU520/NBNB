@@ -31,5 +31,7 @@ namespace Web
                 NewsListView.DataBind();
             }
         }
+
+       
     }
 }

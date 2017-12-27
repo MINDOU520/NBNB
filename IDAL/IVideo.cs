@@ -23,6 +23,7 @@ namespace IDAL
             int updateDownLoadNum(int V_Id);
             DataTable selectKeyWord(string kw);
         DataTable SelectTop4();
+        DataTable SelectAll();
         int updatev_clickNum(int V_Id);
         int updatev_downloadNum(int V_Id);
     }

@@ -67,9 +67,9 @@ namespace BLL
         /// 查询所有数据
         /// </summary>
         /// <returns>返回查询结果</returns>
-        public static DataTable selectAll()
+        public static DataTable SelectAll()
         {
-            return ivideo.selectAll();
+            return ivideo.SelectAll();
         }
 
     /// <summary>
@@ -95,6 +95,8 @@ namespace BLL
         {
             return ivideo.SelectTop4();
         }
+
+       
         /// <summary>
         /// 更新点击量
         /// </summary>

@@ -20,7 +20,8 @@
         </div>
 
         <div style="padding: 10px;">
-            <asp:ListView ID="NewsListView" runat="server">
+            <asp:ListView ID="NewsListView" runat="server" >
+              
                 <LayoutTemplate>
                     <div id="itemPlaceholderContainer" runat="server">
                         <div id="itemPlaceholder" runat="server">

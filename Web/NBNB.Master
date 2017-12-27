@@ -140,8 +140,8 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">社区讨论</a></li>
-                                    <li><a href="#">篮球教学</a></li>
-                                    <li><a href="#">二手交易</a></li>
+                                    <li><a href="Video.aspx">视频集合</a></li>
+                                   <%-- <li><a href="#">二手交易</a></li>--%>
                                 </ul>
                             </li>													
 							<li role="presentation" class="dropdown">

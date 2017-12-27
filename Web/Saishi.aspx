@@ -6,7 +6,7 @@
     <div class ="container">
         
             
- <div >
+ <%--<div >
         <asp:DataList ID="DataList1" runat="server" DataKeyField="S_Id" RepeatColumns="4" style="text-align:center;" Width="1156px" >
             <ItemTemplate >
                <table>
@@ -15,7 +15,7 @@
                             <asp:ImageButton ID="ImageButton1" runat="server" Height="45px" Width="45px"/>
                         </td>
                         <td >
-                          <asp:HyperLink ID="HyperLink1" runat="server" Font-Names="微软雅黑" ToolTip='<%#"点击查看："+ Eval("s_name") %>' Font-Size="12" NavigateUrl='<%#"~/#.aspx?id="+Eval("s_id") %>' ForeColor="#2b2b2b" Font-Underline="false" Text='<%#Eval("s_name") %>'></asp:HyperLink>
+                          <asp:HyperLink ID="HyperLink1" runat="server" Font-Names="微软雅黑" ToolTip='<%#"点击查看："+ Eval("S_name") %>' Font-Size="12" NavigateUrl='<%#"~/Userhome.aspx?id="+Eval("s_id") %>' ForeColor="#2b2b2b" Font-Underline="false" Text='<%#Eval("S_name") %>'></asp:HyperLink>
                         </td>
                     </tr>
                     <tr>
@@ -44,12 +44,12 @@
                     <tr>
                         <td>已参加人数：</td>
                         <td>
-                            <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                       </td>
                     </tr>
                     <tr>
                         <td colspan="2" style="text-align: center">
-                            <asp:Button ID="Button1" runat="server" Text="参加" OnClick="Button1_Click" OnClientClick="return confirm('参加成功!')" />
+                            <asp:Button ID="Button1" runat="server" Text="参加" OnClientClick="return confirm('参加成功!')" />
                         </td>
                     </tr>
                 </table>
@@ -63,8 +63,8 @@
         <table>
         <tr>
             <td style="width: 100px">
-                <asp:Label ID="Label5" runat="server" Font-Size="9pt" Text="当前页为 [ ">
-                </asp:Label><asp:Label ID="Label7" runat="server" Text="1" Font-Size="9pt"></asp:Label>
+                <asp:Label ID="Label5" runat="server" Font-Size="9pt" Text="当前页为 [ "></asp:Label>
+                <asp:Label ID="Label7" runat="server" Text="1" Font-Size="9pt"></asp:Label>
                 <asp:Label ID="Label3" runat="server" Font-Size="9pt" Text=" ]"></asp:Label></td>
             <td style="width: 40px">
                 <asp:LinkButton ID="LinkButton2" runat="server" Font-Size="9pt" Font-Underline="False"
@@ -84,7 +84,77 @@
                 <asp:Label ID="Label4" runat="server" Font-Size="9pt" Text=" ]"></asp:Label></td>
         </tr>
     </table>
-    </div>
+    </div>--%>
+
+       <asp:ListView ID="NewsListView" runat="server"  GroupItemCount="4">
+            <LayoutTemplate>
+                <table>
+                    <asp:PlaceHolder ID="groupPlaceHolder" runat="server"></asp:PlaceHolder>
+                </table>
+                    
+                <asp:DataPager ID="DataPager1" class="myPager" runat="server" PageSize="8">
+                    <Fields>
+                        <asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="true" ShowNextPageButton="false"
+                            ShowPreviousPageButton="true" FirstPageText="首页" NextPageText="下一页" PreviousPageText="上一页" LastPageText="尾页" />
+                        <asp:NumericPagerField ButtonCount="5" CurrentPageLabelCssClass="current" />
+                        <asp:NextPreviousPagerField ButtonType="Link" ShowLastPageButton="True"
+                            ShowNextPageButton="true" NextPageText="下一页" PreviousPageText="上一页"  ShowPreviousPageButton="false" FirstPageText="首页" LastPageText="尾页" />
+
+                    </Fields>
+
+            </asp:DataPager>
+
+                    
+        </LayoutTemplate>
+           <GroupTemplate>
+               <tr>
+               <asp:PlaceHolder ID="itemPlaceHolder" runat="server"></asp:PlaceHolder></tr>
+           </GroupTemplate>
+                <ItemTemplate>
+                    
+                      
+                    <td>
+                        <div style="display:inline;">
+                            <div style="width:40%; float:left;">
+                                <asp:ImageButton ID="ImageButton1" runat="server" Height="45px" Width="45px"/>
+
+                            </div>
+                        <div style="width:60%; float:left">
+                            <asp:HyperLink ID="HyperLink1" runat="server" Font-Names="微软雅黑" ToolTip='<%#"点击查看："+ Eval("username") %>' Font-Size="12" NavigateUrl='<%#"~/Userhome.aspx?id="+Eval("Userid") %>' ForeColor="#2b2b2b" Font-Underline="false" Text='<%#Eval("username") %>'></asp:HyperLink>
+                       
+                            <br />
+                            <asp:Label ID="S_FabutimeLabel" runat="server" Text='<%# Eval("S_Fabutime") %>' />
+                        </div>
+
+                    </div>
+                    <br />
+                       比赛形式：
+                        
+                            <asp:Label ID="S_NameLabel" runat="server" Text='<%# Eval("S_Name") %>' />
+                       
+                    <br />
+                        比赛时间：
+                        
+                            <asp:Label ID="S_TimeLabel" runat="server" Text='<%# Eval("S_Time") %>' />
+                      
+                    <br />
+                        比赛地点：
+                        
+                            <asp:Label ID="S_AdderLabel" runat="server" Text='<%# Eval("S_Adder") %>' />
+                        
+                    <br />
+                       已参加人数：
+                       
+                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                     
+                    <br />
+                      
+                            <asp:Button ID="Button1" runat="server" Text="参加" OnClientClick="return confirm('参加成功!')" />
+                        
+                    <br />
+                    
+                </ItemTemplate>
+            </asp:ListView>
 
     </div>
 </asp:Content>

@@ -16,7 +16,7 @@ namespace Web
         {
             if (!IsPostBack)
             {
-                int vid = Convert.ToInt32(Request.QueryString["V_Id"]);
+                int vid = Convert.ToInt32(Request.QueryString["id"]);
                 ViewState["vid"] = vid;
             }
             BindPlayVideo();

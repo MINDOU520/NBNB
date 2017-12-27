@@ -11,5 +11,7 @@ namespace IDAL
     {
         DataTable SelectID(int s_Id);
         int Insert(Saishi ns);
+        int updateS_clickNum(int s_Id);
+        DataTable SelectAll();
     }
 }

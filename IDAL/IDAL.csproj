@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ICommodity.cs" />
     <Compile Include="ISaishi.cs" />
+    <Compile Include="ITiezi.cs" />
     <Compile Include="IUsers.cs" />
     <Compile Include="IVideo.cs" />
     <Compile Include="IZhanbao.cs" />

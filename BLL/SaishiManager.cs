@@ -24,5 +24,13 @@ namespace BLL
         {
             return isaishi.SelectID(S_Id);
         }
+        public  static int updateS_clickNum(int S_Id)
+        {
+            return isaishi.updateS_clickNum(S_Id);
+        }
+        public static DataTable SelectAll()
+        {
+            return isaishi.SelectAll();
+        }
     }
 }

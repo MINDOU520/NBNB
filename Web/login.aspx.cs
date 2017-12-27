@@ -34,7 +34,11 @@ namespace Web
                     {
                         Session["UserName"] = dr[1].ToString();
                         Session["UserId"] = dr[0];
-                                                
+                        Session["role"] = 3;
+                        if (Session["callerh"] != null)
+                        {
+                            Response.Redirect(Session["callerh"].ToString());
+                        }
                         Response.Redirect("~/index.aspx");
                     }
                     else

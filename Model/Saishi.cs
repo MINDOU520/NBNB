@@ -12,10 +12,9 @@ namespace Model
         private string s_name;
         private string s_time;             //比赛时间
         private string s_adder;               //比赛地址
-        private string userid;                //用户编号 
-        private string username;
-        private string usertouxiang; 
-
+        private int  userid;                //用户编号 
+        private string s_num;
+        private string s_fabutime;        
         public int S_Id
         {
             get { return this.s_id; }
@@ -37,20 +36,20 @@ namespace Model
             set { this.s_adder = value; }
         }
      
-        public string UserId
+        public int UserId
         {
             get { return this.userid; }
             set { this.userid = value; }
         }
-        public string UserName
+        public string S_Num
         {
-            get { return this.username; }
-            set { this.username = value; }
+            get { return this.s_num; }
+            set { this.s_num = value; }
         }
-        public string UserTouxiang
+        public string S_Fabutime
         {
-            get { return this.usertouxiang; }
-            set { this.usertouxiang = value; }
+            get { return this.s_fabutime; }
+            set { this.s_fabutime= value; }
         }
     }
 }

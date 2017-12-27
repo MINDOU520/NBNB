@@ -107,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddSaishi.aspx" />
+    <Content Include="AddTiezi.aspx" />
     <Content Include="AddZhanbao.aspx" />
     <Content Include="css\userhome.css" />
     <Content Include="img\1.jpg" />
@@ -1045,6 +1046,7 @@
     <Content Include="js\backtop.js" />
     <Content Include="js\drop-down.js" />
     <Content Include="Login.aspx" />
+    <Content Include="Luntan.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1065,6 +1067,7 @@
     <Content Include="Saishi.aspx" />
     <Content Include="Shangpinzhanshi.aspx" />
     <Content Include="styles.js" />
+    <Content Include="Video.aspx" />
     <Content Include="Video\4.mp4" />
     <Content Include="Video\2.mp4" />
     <Content Include="Video\3.mp4" />
@@ -1115,6 +1118,13 @@
     <Compile Include="AddSaishi.aspx.designer.cs">
       <DependentUpon>AddSaishi.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AddTiezi.aspx.cs">
+      <DependentUpon>AddTiezi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddTiezi.aspx.designer.cs">
+      <DependentUpon>AddTiezi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddZhanbao.aspx.cs">
       <DependentUpon>AddZhanbao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1138,6 +1148,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Luntan.aspx.cs">
+      <DependentUpon>Luntan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Luntan.aspx.designer.cs">
+      <DependentUpon>Luntan.aspx</DependentUpon>
     </Compile>
     <Compile Include="NBNB.Master.cs">
       <DependentUpon>NBNB.Master</DependentUpon>
@@ -1195,6 +1212,13 @@
     </Compile>
     <Compile Include="Userhome.aspx.designer.cs">
       <DependentUpon>Userhome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Video.aspx.cs">
+      <DependentUpon>Video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Video.aspx.designer.cs">
+      <DependentUpon>Video.aspx</DependentUpon>
     </Compile>
     <Compile Include="Zhanbao.aspx.cs">
       <DependentUpon>Zhanbao.aspx</DependentUpon>

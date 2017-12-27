@@ -83,11 +83,11 @@ namespace DALFactory
         //    string className = AssemblyName + "." + db + "T_Comment";
         //    return (IT_Comment)Assembly.Load(AssemblyName).CreateInstance(className);
         //}
-        //public static ITiezi CreateTiezi()
-        //{
-        //    string className = AssemblyName + "." + db + "Tiezi";
-        //    return (ITiezi)Assembly.Load(AssemblyName).CreateInstance(className);
-        //}
+        public static ITiezi CreateTiezi()
+        {
+            string className = AssemblyName + "." + db + "Tiezi";
+            return (ITiezi)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
         //public static IUserGrade CreateUserGrade()
         //{
         //    string className = AssemblyName + "." + db + "UserGrade";

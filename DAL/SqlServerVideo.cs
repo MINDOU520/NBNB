@@ -108,13 +108,13 @@ namespace DAL
         /// 查询所有数据
         /// </summary>
         /// <returns>返回查询结果</returns>
-        public  DataTable selectAll()
+        public  DataTable SelectAll()
         {
             string sql = "select * from Video";
 
             return DBHelper.GetFillData(sql);
         }
-
+   
         public DataTable selectTop4()
         {
             string sql = "select  top 4  from Video order by V_Id desc";
@@ -191,6 +191,11 @@ namespace DAL
         }
 
         public int updateDownLoadNum(int V_Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataTable selectAll()
         {
             throw new NotImplementedException();
         }

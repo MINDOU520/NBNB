@@ -20,7 +20,7 @@ namespace DAL
         }
         public  DataTable SelectAll()
         {
-            string sql = "select  * from Zhanbao";
+            string sql = "select  * from Zhanbao order by z_time desc";
             return DBHelper.GetFillData(sql);
         }
         public DataTable SelectID(int Z_Id)
@@ -41,9 +41,11 @@ namespace DAL
         public  int Insert(Zhanbao ns)
         {
             string sql = "insert into Zhanbao values(@z_title,@z_time,@z_content)";
-            SqlParameter[] sp = new SqlParameter[]{new SqlParameter("@z_title",ns.Z_Title),
-                                                 new SqlParameter("@z_time",ns.Z_Time),
-                                                 new SqlParameter("@z_content",ns.Z_Content)};
+            SqlParameter[] sp = new SqlParameter[]
+            { 
+            new SqlParameter("@z_title",ns.Z_Title),
+            new SqlParameter("@z_time",ns.Z_Time),
+            new SqlParameter("@z_content",ns.Z_Content)};
             return DBHelper.GetExcuteNonQuery(sql, sp);
         }
     }
