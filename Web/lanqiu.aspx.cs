@@ -20,7 +20,7 @@ namespace Web
            
             if (!IsPostBack)
             {
-                BindCommodity();
+                
                 dlBind();
                BindComm();
             }
@@ -28,7 +28,7 @@ namespace Web
        
         private void BindComm()
         {
-            DataTable dt = BLL.CommodityManager.SelectAll();
+            DataTable dt = BLL.CommodityManager.SelectLanqiu();
             if (dt != null && dt.Rows.Count != 0)
             {
                 DataList1.DataSource = dt;
@@ -90,14 +90,6 @@ namespace Web
             this.dlBind();
         }
 
-        private void BindCommodity()
-        {
-            DataTable dt = CommodityManager.SelectTop3();
-            if (dt != null && dt.Rows.Count != 0)
-            {
-                DataList1.DataSource = dt;
-                DataList1.DataBind();
-            }
-        }  
+      
     }
 }

@@ -15,22 +15,20 @@ namespace Web
         {
             if (!IsPostBack)
             {
-          
-                BindVideo();
+                BindTiezi();
             }
         }
 
-     
-
-        private void BindVideo()
+        private void BindTiezi()
         {
-            DataTable dt = VideoManager.selectTop(4);
+            DataTable dt = BLL.TieziManager.SelectAll();
             if (dt != null && dt.Rows.Count != 0)
             {
-                VideoTopListView.DataSource = dt;
-                VideoTopListView.DataBind();
+                TieziListView.DataSource = dt;
+                TieziListView.DataBind();
             }
-        }
 
+
+        }
     }
 }

@@ -14,10 +14,10 @@
         </div>
         <div class ="zx">
             <ul class="link-list">
-			    <li><a href="#"><span class="user4">个人中心</span></a></li>
-			    <li><a href="#"><span class="user4">好友</span></a></li>
-			    <li><a href="#"><span class="user4">购物车</span></a></li>		
-                <li><a href="#"><span class="user4">修改密码</span></a></li>					
+			    <li><a href="#"><div class="user4">个人中心</div></a></li>
+			    <li><a href="#"><div class="user4">好友</div></a></li>
+			    <li><a href="#"><div class="user4">购物车</div></a></li>		
+                <li><a href="#"><div class="user4">修改密码</div></a></li>					
 		    </ul>
         </div>
         <div class ="userbody">
@@ -93,17 +93,17 @@
                          </tr>
                      </table>
                      <br />
-                     &nbsp;<br />
-&nbsp; <br />
-&nbsp;&nbsp;<br />&nbsp;
                      <br />
-&nbsp;
                      <br />
-                     &nbsp;
                      <br />
-&nbsp;
                      <br />
-&nbsp;&nbsp;<br />
+
+                     <br />
+           
+                     <br />
+
+                     <br />
+                     <br />
                  </ItemTemplate>
              </asp:DataList>
              <asp:SqlDataSource ID="NBNB" runat="server" ConnectionString="<%$ ConnectionStrings:NBNBConnectionString %>" SelectCommand="SELECT * FROM [Users]"></asp:SqlDataSource>

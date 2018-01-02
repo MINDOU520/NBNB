@@ -13,35 +13,46 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserName"] == null || Session["role"].ToString() != "3")
+            {
+                Session["callerh"] = Request.AppRelativeCurrentExecutionFilePath;
+                Response.Redirect("login.aspx");
+            }
+            if (Session["M_Name"] == null || Session["role"].ToString() != "3")
+            {
+                Session["callerh"] = Request.AppRelativeCurrentExecutionFilePath;
+                Response.Redirect("ManagerLogin.aspx");
+            }
+
             CKFinder.FileBrowser fileBrowser = new CKFinder.FileBrowser();
-            fileBrowser.BasePath = "ckfinder/";  //设置CKFinder的基路径  
+            fileBrowser.BasePath = "../ckfinder/";  //设置CKFinder的基路径  
             fileBrowser.SetupCKEditor(txtContent);
         }
      
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if ( string.IsNullOrEmpty(txtContent.Text))
+            Model.Tiezi ns = new Model.Tiezi();
+            ns.UserId= Convert.ToInt32(Session["userid"].ToString());
+            ns.T_Time = System.DateTime.Now;
+            ns.T_Content = txtContent.Text;
+            try
+            { 
+             if (TieziManager.AddTiezil(ns) == 1)
             {
-                Page.ClientScript.RegisterClientScriptBlock(typeof(Object), "alert", "<script>alert('请输入信息后再点击！');</script>");
+                txtContent.Text= "";
+                Page.ClientScript.RegisterClientScriptBlock(typeof(Object), "alert", "<script>alert('添加成功！');</script>");
             }
             else
-            {
-                Model.Tiezi ns = new Model.Tiezi();
-                if (Session["user"] != null)
-                {
-                    Users user = (Users)Session["user"];
+            { Page.ClientScript.RegisterClientScriptBlock(typeof(object), "alert", "<script>alert('添加失败！');</script>"); }
 
-                    ns.UserId = user.UserId;
-                }
-                ns.T_Time = System.DateTime.Now;
-                ns.T_Content = txtContent.Text;
-                if (TieziManager.AddTiezi(ns) == 1)
-                {
-                    Page.ClientScript.RegisterClientScriptBlock(typeof(Object), "alert", "<script>alert('新闻上传成功！');</script>");
-                    Response.Redirect("Luntan.aspx");
-                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("错误原因：" + ex.Message);
             }
 
         }
+
     }
-}
+    }
+

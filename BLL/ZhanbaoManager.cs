@@ -14,7 +14,7 @@ namespace BLL
 {
     public class ZhanbaoManager
     {
-        private static IZhanbao izhanbao = DataAccess.CreateZhanbao();
+        private static IZhanbao izhanbao = (IZhanbao)DataAccess.Get<SqlServerZhanbao>();
         public static DataTable SelectTop5()
         {
             return izhanbao.SelectTop5();

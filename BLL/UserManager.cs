@@ -14,7 +14,7 @@ namespace BLL
 {
     public class UserManager
     {
-        private static IUsers iusers= DataAccess.CreateUser();
+        private static IUsers iusers= (IUsers)DataAccess.Get<SqlServerUser>();
         public static DataTable SelectID(int UserId)
         {
             return iusers.SelectID(UserId);

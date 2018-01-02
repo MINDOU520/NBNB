@@ -13,7 +13,10 @@ namespace BLL
 {
     public class TieziManager
     {
-        private static ITiezi itiezi = DataAccess.CreateTiezi();
+        //private static ITiezi itiezi = DataAccess.CreateTiezi();
+
+        private static ITiezi itiezi = (ITiezi)DataAccess.Get<SqlSeverTiezi>();
+
         public static DataTable SelectID(int T_Id)
         {
             return itiezi.SelectID(T_Id);
@@ -24,7 +27,9 @@ namespace BLL
             return itiezi.SelectAll();
         }
 
-        public static int AddTiezi(Tiezi ns)
+        
+
+        public static int AddTiezil(Tiezi ns)
         {
             return itiezi.Insert(ns);
         }

@@ -86,7 +86,7 @@
     </table>
     </div>--%>
 
-       <asp:ListView ID="NewsListView" runat="server"  GroupItemCount="4">
+       <asp:ListView ID="SaishiListView" runat="server"  GroupItemCount="4">
             <LayoutTemplate>
                 <table>
                     <asp:PlaceHolder ID="groupPlaceHolder" runat="server"></asp:PlaceHolder>
@@ -115,16 +115,14 @@
                       
                     <td>
                         <div style="display:inline;">
-                            <div style="width:40%; float:left;">
-                                <asp:ImageButton ID="ImageButton1" runat="server" Height="45px" Width="45px"/>
-
-                            </div>
-                        <div style="width:60%; float:left">
-                            <asp:HyperLink ID="HyperLink1" runat="server" Font-Names="微软雅黑" ToolTip='<%#"点击查看："+ Eval("username") %>' Font-Size="12" NavigateUrl='<%#"~/Userhome.aspx?id="+Eval("Userid") %>' ForeColor="#2b2b2b" Font-Underline="false" Text='<%#Eval("username") %>'></asp:HyperLink>
-                       
-                            <br />
-                            <asp:Label ID="S_FabutimeLabel" runat="server" Text='<%# Eval("S_Fabutime") %>' />
+                           <div class="user flex-box items-center">
+                            <a href='<%#Eval("userid") %>'>
+                                <img src='<%# Eval("usertouxiang") %>'/>
+                            </a>
+                            <a class="margin-lr-10 fs-18" href='<%#Eval("userid") %>'><%# Eval("username") %></a>
+                            <span class="fs-14">发表于<%# Eval("S_Fabutime", "{0:yyyy-MM-dd hh:mm}") %></span>
                         </div>
+                          
 
                     </div>
                     <br />
@@ -155,6 +153,6 @@
                     
                 </ItemTemplate>
             </asp:ListView>
-
+        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
     </div>
 </asp:Content>

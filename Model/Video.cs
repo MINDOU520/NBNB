@@ -11,7 +11,7 @@ namespace Model
         private int v_id;
         private string v_screenlmg;
         private string v_name;
-        private string v_time;
+        private DateTime v_time;
         private string v_clicknum;
         private string v_downloadnum;
         private string v_savepath;
@@ -33,7 +33,7 @@ namespace Model
             set { this.v_name = value; }
         }
 
-        public string V_Time
+        public DateTime V_Time
         {
             get { return this.v_time; }
             set { this.v_time = value; }

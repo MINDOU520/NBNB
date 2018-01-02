@@ -13,5 +13,7 @@ namespace IDAL
         int Insert(Saishi ns);
         int updateS_clickNum(int s_Id);
         DataTable SelectAll();
+        int CountSaishi();
+        DataTable SelectsaishiById(int S_Id);
     }
 }

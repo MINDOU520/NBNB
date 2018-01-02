@@ -18,7 +18,7 @@ namespace Model
         private string c_viewnum;                                           //商品浏览数
         private string c_size;                                                //商品尺寸
         private string c_color;                                                   //商品颜色
-
+        private string c_biaoshi;
         public int C_Id
         {
             get { return this.c_id; }
@@ -74,6 +74,11 @@ namespace Model
         {
             get { return this.c_color; }
             set { this.c_color = value; }
+        }
+        public string C_Baioshi
+        {
+            get { return this.c_biaoshi; }
+            set { this.c_biaoshi = value; }
         }
     }
 }

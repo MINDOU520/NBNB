@@ -17,7 +17,7 @@ namespace Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["userName"] == null || Session["role"].ToString() != "3")
+            if (Session["UserName"] == null || Session["role"].ToString() != "3")
             {
                 Session["callerh"] = Request.AppRelativeCurrentExecutionFilePath;
                 Response.Redirect("login.aspx");
@@ -44,14 +44,16 @@ namespace Web
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Model.Saishi dt = new Model.Saishi();
-            dt.UserId = Convert.ToInt32(Session["userid"].ToString());
-            dt.S_Name= txtname.Text.Trim();
-            dt.S_Time = txttime.Text.Trim();
-            dt.S_Adder = txtadder.Text.Trim();
+            Model.Saishi ns= new Model.Saishi();
+
+            ns.S_Name= txtname.Text.Trim();
+            ns.UserId = Convert.ToInt32(Session["userid"].ToString());
+            ns.S_Time = txttime.Text.Trim();
+            ns.S_Adder = txtadder.Text.Trim();
+            ns.S_Fabutime = System.DateTime.Now;
             try
             {
-                if (SaishiManager.AddSaishi(dt) == 1)
+                if (SaishiManager.AddSaishi(ns) == 1)
                 {
                   
                     Page.ClientScript.RegisterClientScriptBlock(typeof(Object), "alert", "<script>alert('添加成功！');</script>");
@@ -63,7 +65,7 @@ namespace Web
             catch (Exception ex)
             {
                 Label2.Text = "赛事发布失败，错误原因：" + ex.Message;
-            }
+                }
         }
             //if (this.IsValid)
             //{

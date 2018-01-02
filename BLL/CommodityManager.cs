@@ -14,7 +14,7 @@ namespace BLL
 {
     public class CommodityManager
     {
-        private static ICommodity icommodity = DataAccess.CreateCommdity();
+        private static ICommodity icommodity = (ICommodity)DataAccess.Get<SqlServerCommodity>();
         public static int AddCommodity(Commodity cm)
         {
             return icommodity.Insert(cm);
@@ -24,9 +24,25 @@ namespace BLL
             return icommodity.SelectAll();
         }
 
-        public static DataTable SelectTop3()
+        public static DataTable SelectlanqiuTop4()
         {
-            return icommodity.SelectTop3();
+            return icommodity.SelectlanqiuTop4();
+        }
+        public static  DataTable SelectqiufuTop4()
+        {
+            return icommodity.SelectqiufuTop4();
+        }
+        public static  DataTable SelectqiuxieTop4()
+        {
+            return icommodity.SelectqiuxieTop4();
+        }
+        public static DataTable SelecthujuTop4()
+        {
+            return icommodity.SelecthujuTop4();
+        }
+        public static  DataTable SelectotherTop4()
+        {
+            return icommodity.SelectotherTop4();
         }
         public static DataTable SelectTop1()
         {
@@ -37,7 +53,26 @@ namespace BLL
         {
             return icommodity.SelectID(C_Id);
         }
+        public  static DataTable SelectLanqiu()
+        {
+            return icommodity.selectlanqiu();
+        }
+        public static DataTable selecthuju()
+        {
+            return icommodity.Selecthuju();
+        }
+        public static DataTable selectqiufu()
+        {
+            return icommodity.Selectqiufu();
+        }
+        public static DataTable selectqiuxie()
+        {
+            return icommodity.Selectqiuxie();
+        }
+        public static DataTable selectother()
+        {
+            return icommodity.Selectother();
+        }
 
-       
     }
 }

@@ -108,6 +108,7 @@
   <ItemGroup>
     <Content Include="AddSaishi.aspx" />
     <Content Include="AddTiezi.aspx" />
+    <Content Include="AddVideo.aspx" />
     <Content Include="AddZhanbao.aspx" />
     <Content Include="css\userhome.css" />
     <Content Include="img\1.jpg" />
@@ -1047,6 +1048,8 @@
     <Content Include="js\drop-down.js" />
     <Content Include="Login.aspx" />
     <Content Include="Luntan.aspx" />
+    <Content Include="Manager.aspx" />
+    <Content Include="ManagerLogin.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1062,9 +1065,11 @@
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="PlayVideo.aspx" />
+    <Content Include="qiuxie.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Lanqiu.aspx" />
     <Content Include="Saishi.aspx" />
+    <Content Include="Shangcheng.aspx" />
     <Content Include="Shangpinzhanshi.aspx" />
     <Content Include="styles.js" />
     <Content Include="Video.aspx" />
@@ -1125,6 +1130,13 @@
     <Compile Include="AddTiezi.aspx.designer.cs">
       <DependentUpon>AddTiezi.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AddVideo.aspx.cs">
+      <DependentUpon>AddVideo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddVideo.aspx.designer.cs">
+      <DependentUpon>AddVideo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddZhanbao.aspx.cs">
       <DependentUpon>AddZhanbao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1156,6 +1168,20 @@
     <Compile Include="Luntan.aspx.designer.cs">
       <DependentUpon>Luntan.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manager.aspx.cs">
+      <DependentUpon>Manager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager.aspx.designer.cs">
+      <DependentUpon>Manager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerLogin.aspx.cs">
+      <DependentUpon>ManagerLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagerLogin.aspx.designer.cs">
+      <DependentUpon>ManagerLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="NBNB.Master.cs">
       <DependentUpon>NBNB.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1178,6 +1204,13 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="qiuxie.aspx.cs">
+      <DependentUpon>qiuxie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qiuxie.aspx.designer.cs">
+      <DependentUpon>qiuxie.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1198,6 +1231,13 @@
     </Compile>
     <Compile Include="Saishi.aspx.designer.cs">
       <DependentUpon>Saishi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shangcheng.aspx.cs">
+      <DependentUpon>Shangcheng.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shangcheng.aspx.designer.cs">
+      <DependentUpon>Shangcheng.aspx</DependentUpon>
     </Compile>
     <Compile Include="Shangpinzhanshi.aspx.cs">
       <DependentUpon>Shangpinzhanshi.aspx</DependentUpon>
@@ -1245,10 +1285,6 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{ab850f6e-de28-4952-8a20-713ad8dd6683}</Project>
       <Name>BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{1cc07e8e-8d57-4241-94f1-e1641c932f67}</Project>
-      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{653aded3-85e3-4096-9e07-5f0fea86fc07}</Project>

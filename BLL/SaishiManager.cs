@@ -14,7 +14,7 @@ namespace BLL
    
     public class SaishiManager
     {
-        private static ISaishi isaishi= DataAccess.CreateSaishi();
+        private static ISaishi isaishi= (ISaishi)DataAccess.Get<SqlServerSaishi>();
         public static int AddSaishi(Saishi ns)
         {
             return isaishi.Insert(ns);
@@ -31,6 +31,14 @@ namespace BLL
         public static DataTable SelectAll()
         {
             return isaishi.SelectAll();
+        }
+        public static int Countsaiishi()
+        {
+            return isaishi.CountSaishi();
+        }
+        public static DataTable SelectsaishiById(int  S_Id)
+        {
+            return isaishi.SelectsaishiById(S_Id);
         }
     }
 }

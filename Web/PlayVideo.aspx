@@ -178,23 +178,24 @@
                                     <span class="glyphicon glyphicon-comment" style="color: rgb(215, 90, 60);font-size: 18px;"> 论坛</span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">社区讨论</a></li>
+                                       <li><a href="AddTiezi.aspx">我要发帖</a></li>
+                                    <li><a href="Luntan.aspx">社区讨论</a></li>
                                     <li><a href="Video.aspx">视频集合</a></li>
                                    <%-- <li><a href="#">二手交易</a></li>--%>
                                 </ul>
                             </li>													
 							<li role="presentation" class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                                <a href="Shangcheng.aspx" class="dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
                                     <span class="glyphicon glyphicon-shopping-cart" style="color: rgb(215, 90, 60);font-size: 18px;"> 商城</span>
 
                                 </a>
-                                <ul class="dropdown-menu">
+                                <%--<ul class="dropdown-menu">
                                     <li><a href="#">球服</a></li>
                                     <li><a href="#">球鞋</a></li>
                                     <li><a href="Lanqiu.aspx">篮球</a></li>
                                     <li><a href="#">护具</a></li>
                                     <li><a href="#">其他</a></li>
-                                </ul>
+                                </ul>--%>
 							</li>
                             <li><a href="Login.aspx"><span class="glyphicon glyphicon-user" style="color: rgb(215, 90, 60);font-size: 18px;"> 登录</span></a></li>
 							<%--<li><a href="#"><span class="glyphicon glyphicon-search" style="color: rgb(215, 90, 60);font-size: 18px;"> 搜索</span></a></li>--%>

@@ -9,16 +9,22 @@ namespace Model
   public   class Saishi
     {
         private int s_id;                 //比赛编号
+        private int  userid;   //用户编号 
         private string s_name;
         private string s_time;             //比赛时间
         private string s_adder;               //比赛地址
-        private int  userid;                //用户编号 
+                   
         private string s_num;
-        private string s_fabutime;        
+        private DateTime s_fabutime;        
         public int S_Id
         {
             get { return this.s_id; }
             set { this.s_id = value; }
+        }
+        public int UserId
+        {
+            get { return this.userid; }
+            set { this.userid = value; }
         }
         public string S_Name
         {
@@ -36,17 +42,13 @@ namespace Model
             set { this.s_adder = value; }
         }
      
-        public int UserId
-        {
-            get { return this.userid; }
-            set { this.userid = value; }
-        }
+       
         public string S_Num
         {
             get { return this.s_num; }
             set { this.s_num = value; }
         }
-        public string S_Fabutime
+        public DateTime S_Fabutime
         {
             get { return this.s_fabutime; }
             set { this.s_fabutime= value; }

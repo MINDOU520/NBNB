@@ -44,7 +44,19 @@ namespace DAL
 
             return DBHelper.GetExcuteNonQuery(sql, AssignParameter(video));
         }
+       public  int publishVideo(Video video)
+        {
+            string sql = "insert into Video(v_name,v_time,v_savepath,v_screenImg) values(@v_name,@v_time,@v_savepath,@v_screenImg)";
+            SqlParameter[] sp = new SqlParameter[]{
 
+
+                new SqlParameter("@v_name",video.V_Name),
+                new SqlParameter("@v_time",video.V_Time),
+                new SqlParameter("@v_savepath",video.V_Savepath),
+                  new SqlParameter("@v_screenImg",video.V_ScreenImg)
+            };
+            return DBHelper.GetExcuteNonQuery(sql ,sp);
+        }
         /// <summary>
         /// 批量添加
         /// </summary>

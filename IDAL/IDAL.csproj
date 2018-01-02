@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICommodity.cs" />
+    <Compile Include="IManager.cs" />
     <Compile Include="ISaishi.cs" />
     <Compile Include="ITiezi.cs" />
     <Compile Include="IUsers.cs" />

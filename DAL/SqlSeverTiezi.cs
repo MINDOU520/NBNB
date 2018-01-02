@@ -25,7 +25,7 @@ namespace DAL
         }
         public DataTable SelectAll()
         {
-            string sql = "select T_id,Userid,t_time,T_content from Tiezi";
+            string sql = "select T_id,Userid,t_time,T_content from Tiezi order by t_time desc";
             return DBHelper.GetFillData(sql);
         }
         public DataTable SelectUsername()
@@ -36,9 +36,9 @@ namespace DAL
 
         public int Insert(Tiezi ns)
         {
-            string sql = "insert into tiezi values(@t_time,@t_content)";
+            string sql = "insert into [Tiezi]([UserId],[T_Time],[T_Content]) values(@userid,@t_time,@t_content)";
             SqlParameter[] sp = new SqlParameter[]
-            {
+            {new SqlParameter("@userid",ns.UserId),
             new SqlParameter("@t_time",ns.T_Time),
             new SqlParameter("@t_content",ns.T_Content)};
             return DBHelper.GetExcuteNonQuery(sql, sp);

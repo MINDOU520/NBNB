@@ -13,7 +13,7 @@ namespace BLL
 {
     public  class VideoManager
     {
-        private static IVideo ivideo = DataAccess.CreateVideo();
+        private static IVideo ivideo = (IVideo)DataAccess.Get<SqlServerVideo>();
         /// <summary>
         /// 添加记录
         /// </summary>
@@ -22,6 +22,10 @@ namespace BLL
         public static int addVideo(Video video)
         {
             return ivideo.addVideo(video);
+        }
+        public static  int publishVideo(Video video)
+        {
+            return ivideo.publishVideo(video);
         }
 
         /// <summary>

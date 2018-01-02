@@ -12,8 +12,17 @@ namespace IDAL
     {
         DataTable SelectTop1();
         DataTable SelectID(object c_Id);
-        DataTable SelectTop3();
+        DataTable SelectlanqiuTop4();
         DataTable SelectAll();
         int Insert(Commodity cm);
+        DataTable selectlanqiu();
+        DataTable SelectqiufuTop4();
+        DataTable SelectqiuxieTop4();
+        DataTable SelecthujuTop4();
+        DataTable SelectotherTop4();
+        DataTable Selectqiufu();
+        DataTable Selectqiuxie();
+        DataTable Selecthuju();
+        DataTable Selectother();
     }
 }

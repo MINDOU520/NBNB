@@ -48,11 +48,11 @@ namespace DALFactory
         //    string className = AssemblyName + "." + db + "Judge";
         //    return (IJudge)Assembly.Load(AssemblyName).CreateInstance(className);
         //}
-        //public static IManager CreateManager()
-        //{
-        //    string className = AssemblyName + "." + db + "Manager";
-        //    return (IManager)Assembly.Load(AssemblyName).CreateInstance(className);
-        //}
+        public static IManager CreateManager()
+        {
+            string className = AssemblyName + "." + db + "Manager";
+            return (IManager)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
         //public static IOrder CreateOrder()
         //{
         //    string className = AssemblyName + "." + db + "Order";
@@ -86,6 +86,7 @@ namespace DALFactory
         public static ITiezi CreateTiezi()
         {
             string className = AssemblyName + "." + db + "Tiezi";
+            // string className = AssemblyName + ".SqlSeverTiezi";
             return (ITiezi)Assembly.Load(AssemblyName).CreateInstance(className);
         }
         //public static IUserGrade CreateUserGrade()
@@ -113,6 +114,9 @@ namespace DALFactory
             string className = AssemblyName + "." + db + "Zhanbao";
             return (IZhanbao)Assembly.Load(AssemblyName).CreateInstance(className);
         }
-
+        public static object Get<T>()
+        {
+            return Assembly.Load(AssemblyName).CreateInstance(typeof(T).ToString()); // 赋值时需作拆箱处理
+        }
     }
 }

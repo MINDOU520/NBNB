@@ -17,6 +17,7 @@ namespace Web
             if (!IsPostBack)
             {
                 BindSaishi();
+                ListsaishiDetail();
                 //dlBind();
                 //Bindup();
             }
@@ -27,8 +28,49 @@ namespace Web
             DataTable dt = BLL.SaishiManager.SelectAll();
             if (dt != null && dt.Rows.Count != 0)
             {
-                NewsListView.DataSource = dt;
-                NewsListView.DataBind();
+                SaishiListView.DataSource = dt;
+                SaishiListView.DataBind();
+            }
+        }
+
+        private void ListsaishiDetail()
+        {
+            try
+            {
+                int S_Id = GetNoticeId();
+
+                if (S_Id == 0)
+                {
+                    Response.Redirect("~/");
+                    return;
+                }
+
+                DataTable data = BLL.SaishiManager.SelectsaishiById(S_Id);
+
+                if (data != null)
+                {
+                    SaishiListView.DataSource = data;
+                    SaishiListView.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+              Label2 .Text = ex.Message;
+            }
+        }
+        protected int GetNoticeId()
+        {
+            try
+            {
+                // 注意类型转换
+               int  id = !String.IsNullOrEmpty(Request.QueryString["id"]) ? int.Parse(Request.QueryString["id"]) : 0;
+
+                return id;
+            }
+            catch (Exception ex)
+            {
+                Label2.Text = ex.Message;
+                return 0;
             }
         }
 

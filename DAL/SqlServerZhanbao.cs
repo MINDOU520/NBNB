@@ -40,7 +40,7 @@ namespace DAL
         }
         public  int Insert(Zhanbao ns)
         {
-            string sql = "insert into Zhanbao values(@z_title,@z_time,@z_content)";
+            string sql = "insert into [Zhanbao]([Z_Title],[Z_Time],[Z_Content]) values(@z_title,@z_time,@z_content)";
             SqlParameter[] sp = new SqlParameter[]
             { 
             new SqlParameter("@z_title",ns.Z_Title),
