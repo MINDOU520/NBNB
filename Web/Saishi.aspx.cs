@@ -16,8 +16,16 @@ namespace Web
         {
             if (!IsPostBack)
             {
-                BindSaishi();
-                ListsaishiDetail();
+                if (GetNoticeId()  == 0)
+                {
+                    BindSaishi();
+                }
+                else
+                {
+                    // ListsaishiDetail();
+                }
+
+                //ListsaishiDetail();
                 //dlBind();
                 //Bindup();
             }
@@ -26,6 +34,7 @@ namespace Web
         private void BindSaishi()
         {
             DataTable dt = BLL.SaishiManager.SelectAll();
+
             if (dt != null && dt.Rows.Count != 0)
             {
                 SaishiListView.DataSource = dt;
@@ -74,6 +83,59 @@ namespace Web
             }
         }
 
+        /// <summary>
+        ///  点击参赛按钮，添加参赛记录到数据库
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Button         btn               = (Button)sender;
+                HiddenField hideSaishiId = btn.Parent.FindControl("HideSaishiId") as HiddenField;
+
+                int userId   = GetLoginedUserId();
+                int saishiId = Convert.ToInt32(hideSaishiId.Value);
+
+                if (userId == 0) // 未登录
+                {
+                    return;
+                }
+
+                Model.Cansai canSai = new Model.Cansai()
+                {
+                    S_Id = saishiId,
+                    UserId = userId
+                };
+
+                int line = BLL.CansaiManager.AddCansai(canSai);  // 开始添加参赛记录
+
+                if (line <= 0)
+                {
+                    // 插入失败
+                }
+                else
+                {
+                    // 插入成功
+                    BindSaishi(); // 重新查询数据库并绑定，会引起页的回发哦
+                }
+            }
+            catch (Exception)
+            {
+                // 发生异常执行这里哦
+            }
+        }
+
+        /// <summary>
+        /// 获取登录用户的 ID
+        /// </summary>
+        /// <returns>用户 ID</returns>
+        protected int GetLoginedUserId()
+        {
+            return Session["UserId"] != null ? Convert.ToInt32(Session["UserId"]) : 0;
+        }
+
         //private void Bindup()
         //{
         //    DataTable dt = SaishiManager.updateS_clickNum();
@@ -83,9 +145,6 @@ namespace Web
         //        DataList1.DataBind();
         //    }
         //}
-
-
-
 
         //        private void dlBind()
         //        {

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICansai.cs" />
     <Compile Include="ICommodity.cs" />
     <Compile Include="IManager.cs" />
     <Compile Include="ISaishi.cs" />
@@ -49,6 +50,8 @@
     <Compile Include="IUsers.cs" />
     <Compile Include="IVideo.cs" />
     <Compile Include="IZhanbao.cs" />
+    <Compile Include="IZ_Comment.cs" />
+    <Compile Include="IZ_Reply.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

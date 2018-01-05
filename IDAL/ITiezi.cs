@@ -13,5 +13,9 @@ namespace IDAL
         DataTable SelectID(int t_Id);
         DataTable SelectAll();
         int Insert(Tiezi ns);
+     
+        int Dianzan(int t_Id);
+        DataTable SelectTouxiang();
+        DataTable SelectUsername();
     }
 }

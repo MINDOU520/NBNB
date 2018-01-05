@@ -54,8 +54,8 @@ namespace Web
             DataTable dt = BLL.CommodityManager.SelecthujuTop4();
             if (dt != null && dt.Rows.Count != 0)
             {
-                ListView1.DataSource = dt;
-                ListView1.DataBind();
+                ListView4.DataSource = dt;
+                ListView4.DataBind();
             }
         }
         private void Bindother()
@@ -63,8 +63,8 @@ namespace Web
             DataTable dt = BLL.CommodityManager.SelectotherTop4();
             if (dt != null && dt.Rows.Count != 0)
             {
-                ListView1.DataSource = dt;
-                ListView1.DataBind();
+                ListView5.DataSource = dt;
+                ListView5.DataBind();
             }
         }
     }

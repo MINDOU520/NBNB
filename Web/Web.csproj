@@ -107,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddSaishi.aspx" />
+    <Content Include="AddShangping.aspx" />
     <Content Include="AddTiezi.aspx" />
     <Content Include="AddVideo.aspx" />
     <Content Include="AddZhanbao.aspx" />
@@ -1072,6 +1073,7 @@
     <Content Include="Shangcheng.aspx" />
     <Content Include="Shangpinzhanshi.aspx" />
     <Content Include="styles.js" />
+    <Content Include="TieziDetail.aspx" />
     <Content Include="Video.aspx" />
     <Content Include="Video\4.mp4" />
     <Content Include="Video\2.mp4" />
@@ -1080,7 +1082,6 @@
     <Content Include="Video\testVideo.mp4" />
     <Content Include="Userhome.aspx" />
     <Content Include="Zhanbao.aspx" />
-    <Content Include="ZhanbaoDetail.aspx" />
     <Content Include="LICENSE.md" />
     <Content Include="README.md" />
     <Content Include="ckfinder\plugins\fileeditor\codemirror\LICENSE" />
@@ -1093,6 +1094,7 @@
     <Content Include="ckeditor\CHANGES.md" />
     <Content Include="ckeditor\LICENSE.md" />
     <Content Include="ckeditor\README.md" />
+    <Content Include="ZhanbaoDetail.aspx" />
     <None Include="scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="scripts\jquery-3.2.1.js" />
     <Content Include="scripts\jquery-3.2.1.min.js" />
@@ -1122,6 +1124,13 @@
     </Compile>
     <Compile Include="AddSaishi.aspx.designer.cs">
       <DependentUpon>AddSaishi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddShangping.aspx.cs">
+      <DependentUpon>AddShangping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddShangping.aspx.designer.cs">
+      <DependentUpon>AddShangping.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddTiezi.aspx.cs">
       <DependentUpon>AddTiezi.aspx</DependentUpon>
@@ -1245,6 +1254,13 @@
     </Compile>
     <Compile Include="Shangpinzhanshi.aspx.designer.cs">
       <DependentUpon>Shangpinzhanshi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TieziDetail.aspx.cs">
+      <DependentUpon>TieziDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TieziDetail.aspx.designer.cs">
+      <DependentUpon>TieziDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Userhome.aspx.cs">
       <DependentUpon>Userhome.aspx</DependentUpon>

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SqlServerCansai.cs" />
     <Compile Include="SqlServerCommodity.cs" />
     <Compile Include="DBHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -49,7 +50,9 @@
     <Compile Include="SqlServerUser.cs" />
     <Compile Include="SqlServerVideo.cs" />
     <Compile Include="SqlServerZhanbao.cs" />
-    <Compile Include="SqlSeverTiezi.cs" />
+    <Compile Include="sqlserverZ_Comment.cs" />
+    <Compile Include="SqlServerZ_Reply.cs" />
+    <Compile Include="SqlServerTiezi.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IDAL\IDAL.csproj">

@@ -51,28 +51,36 @@
         <!--首页轮播结束-->
     </div>
 
+    <div class="container">
+        <div class="xian"></div>
+    </div>
+
     <!--首页实时战报开始-->
     <div class="container">
-        <h3 >
-              <span>战报资讯
-              </span>   <asp:HyperLink    runat="server"  Text="更多..." NavigateUrl="#" ></asp:HyperLink>
-          </h3> 
-        
-        <div id="zhaobao">
-        <asp:Repeater ID="Repeater1" runat="server">
-          <ItemTemplate>
-                  <table style="width:580px">
-                    <tr >
-                        <td  style="text-align:left;font-size:14px;line-height:130px;">
-                            <asp:HyperLink ID="hp1"  runat="server"  Text='<%#Eval("z_title") %> ' NavigateUrl='<%# "ZhanbaoDetail.aspx?id="+Eval("z_id") %>' ></asp:HyperLink>
-                        </td>
-                        <td  style="text-align:right;font-size:14px">
-                             <span><%# string.Format("{0:yyyy-MM-dd}",Eval("z_time"))%></span>
-                        </td>
-                    </tr>                              
-                </table>
-              </ItemTemplate>
-              </asp:Repeater>
+        <div id="zhaobao" style="float:left;width:60%;">
+            <h3 >
+                <span>战报资讯</span>   
+                <asp:HyperLink    runat="server"  Text="更多..." NavigateUrl="#" style="float:right;" ></asp:HyperLink>
+            </h3>              
+            <asp:Repeater ID="Repeater1" runat="server">
+                <ItemTemplate>
+                    <table style="width:90%;margin:0 auto;">
+                        <tr >
+                            <td  style="text-align:left;font-size:14px;line-height:130px;">
+                                <asp:HyperLink ID="hp1"  runat="server"  Text='<%#Eval("z_title") %> ' NavigateUrl='<%# "ZhanbaoDetail.aspx?id="+Eval("z_id") %>' ></asp:HyperLink>
+                            </td>
+                            <td  style="text-align:right;font-size:14px">
+                                 <span><%# string.Format("{0:yyyy-MM-dd}",Eval("z_time"))%></span>
+                            </td>
+                        </tr>                              
+                    </table>
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
+        <div id="tiezi" style="width:35%;float:left;margin-left:10px;border:2px solid rgb(215, 90, 60); border-radius:5px; padding:5px;">
+            
+                <h3>最新帖子</h3>
+            
         </div>
     </div>
     <!--首页实时战报结束-->
@@ -87,7 +95,7 @@
     <div class="container">
         <h3 >
             <span>视频信息</span>
-            <asp:HyperLink  CssClass="more" ID="videomore"  runat="server"  Text="更多..." NavigateUrl="Videos.aspx" ></asp:HyperLink>
+            <asp:HyperLink  CssClass="more" ID="videomore"  runat="server"  Text="更多..." NavigateUrl="Videos.aspx" style="float:right;" ></asp:HyperLink>
            
         </h3>
             <asp:ListView ID="VideoTopListView" runat="server"  GroupItemCount="4">

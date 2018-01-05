@@ -13,9 +13,11 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+
+            if (IsPostBack  )
             {
                 BindTiezi();
+                
             }
         }
 
@@ -27,8 +29,7 @@ namespace Web
                 TieziListView.DataSource = dt;
                 TieziListView.DataBind();
             }
-
-
         }
+      
     }
 }

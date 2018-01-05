@@ -24,5 +24,6 @@ namespace IDAL
         DataTable Selectqiuxie();
         DataTable Selecthuju();
         DataTable Selectother();
+        int publishanngping(Commodity ns);
     }
 }

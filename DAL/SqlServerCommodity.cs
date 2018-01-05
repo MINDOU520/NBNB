@@ -110,5 +110,21 @@ namespace DAL
             string sql = "select * from Commodity  where C_Biaoshi='5'";
             return DBHelper.GetFillData(sql);
         }
+
+        public int publishanngping(Commodity ns)
+        {
+            string sql = "insert into [Commodity]([c_name],[c_photo],[c_price],[c_kucun],[c_color],[c_size],[c_biaoshi],[c_content]) values(@c_name,@c_photo,@c_price,@c_kucun,@c_color,@c_size,@c_biaoshi,@c_content)";
+            SqlParameter[] sp = new SqlParameter[]{
+                new SqlParameter("@c_name",ns.C_Name),
+                new SqlParameter("@c_photo",ns.C_Photo),
+                new SqlParameter("@c_price",ns.C_Price),
+                new SqlParameter("@c_kucun",ns.C_Kucun),
+                new SqlParameter("@c_color",ns.C_Color),
+                new SqlParameter("@c_size",ns.C_Size),               
+                new SqlParameter("@c_biaoshi",ns.C_Biaoshi),
+                new SqlParameter("@c_content",ns.C_Content),
+                    };
+            return DBHelper.GetExcuteNonQuery(sql, sp);
+        }
     }
 }

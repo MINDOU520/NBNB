@@ -57,6 +57,12 @@ namespace BLL
         {
             return icommodity.selectlanqiu();
         }
+
+        public static int publishShangping(Commodity ns)
+        {
+            return icommodity.publishanngping(ns);
+        }
+        
         public static DataTable selecthuju()
         {
             return icommodity.Selecthuju();

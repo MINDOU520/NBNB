@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CansaiManager.cs" />
     <Compile Include="CommodityManager.cs" />
     <Compile Include="ManagerManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -48,6 +49,8 @@
     <Compile Include="UserManager.cs" />
     <Compile Include="VideoManager.cs" />
     <Compile Include="ZhanbaoManager.cs" />
+    <Compile Include="Z_CommentManager.cs" />
+    <Compile Include="Z_ReplyManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DALFactory\DALFactory.csproj">

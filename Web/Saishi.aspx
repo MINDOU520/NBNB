@@ -3,9 +3,7 @@
    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class ="container">
-        
-            
+    <div class ="container">                    
  <%--<div >
         <asp:DataList ID="DataList1" runat="server" DataKeyField="S_Id" RepeatColumns="4" style="text-align:center;" Width="1156px" >
             <ItemTemplate >
@@ -86,73 +84,57 @@
     </table>
     </div>--%>
 
-       <asp:ListView ID="SaishiListView" runat="server"  GroupItemCount="4">
+        <asp:ListView ID="SaishiListView" runat="server"  GroupItemCount="4">
             <LayoutTemplate>
                 <table>
                     <asp:PlaceHolder ID="groupPlaceHolder" runat="server"></asp:PlaceHolder>
-                </table>
-                    
+                </table>                   
                 <asp:DataPager ID="DataPager1" class="myPager" runat="server" PageSize="8">
                     <Fields>
-                        <asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="true" ShowNextPageButton="false"
-                            ShowPreviousPageButton="true" FirstPageText="首页" NextPageText="下一页" PreviousPageText="上一页" LastPageText="尾页" />
+                        <asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="true" ShowNextPageButton="false" ShowPreviousPageButton="true" FirstPageText="首页" NextPageText="下一页" PreviousPageText="上一页" LastPageText="尾页" />
                         <asp:NumericPagerField ButtonCount="5" CurrentPageLabelCssClass="current" />
-                        <asp:NextPreviousPagerField ButtonType="Link" ShowLastPageButton="True"
-                            ShowNextPageButton="true" NextPageText="下一页" PreviousPageText="上一页"  ShowPreviousPageButton="false" FirstPageText="首页" LastPageText="尾页" />
-
+                        <asp:NextPreviousPagerField ButtonType="Link" ShowLastPageButton="True" ShowNextPageButton="true" NextPageText="下一页" PreviousPageText="上一页"  ShowPreviousPageButton="false" FirstPageText="首页" LastPageText="尾页" />
                     </Fields>
-
-            </asp:DataPager>
-
-                    
-        </LayoutTemplate>
-           <GroupTemplate>
-               <tr>
-               <asp:PlaceHolder ID="itemPlaceHolder" runat="server"></asp:PlaceHolder></tr>
-           </GroupTemplate>
-                <ItemTemplate>
-                    
-                      
-                    <td>
-                        <div style="display:inline;">
-                           <div class="user flex-box items-center">
-                            <a href='<%#Eval("userid") %>'>
+                </asp:DataPager>                    
+            </LayoutTemplate>
+            <GroupTemplate>
+                <tr>
+                    <asp:PlaceHolder ID="itemPlaceHolder" runat="server"></asp:PlaceHolder>
+                </tr>
+            </GroupTemplate>
+            <ItemTemplate>                                         
+                <td>
+                    <div style="display:inline;">
+                        <div class="user flex-box items-center">
+                            <a href='<%# "Saishi.aspx?id=" + Eval("userid") %>'>
                                 <img src='<%# Eval("usertouxiang") %>'/>
                             </a>
                             <a class="margin-lr-10 fs-18" href='<%#Eval("userid") %>'><%# Eval("username") %></a>
                             <span class="fs-14">发表于<%# Eval("S_Fabutime", "{0:yyyy-MM-dd hh:mm}") %></span>
-                        </div>
-                          
-
+                        </div>                        
                     </div>
                     <br />
-                       比赛形式：
-                        
-                            <asp:Label ID="S_NameLabel" runat="server" Text='<%# Eval("S_Name") %>' />
-                       
+                    <span>比赛形式：</span>                       
+                    <asp:Label ID="S_NameLabel" runat="server" Text='<%# Eval("S_Name") %>' />                       
                     <br />
-                        比赛时间：
-                        
-                            <asp:Label ID="S_TimeLabel" runat="server" Text='<%# Eval("S_Time") %>' />
-                      
+                    <span>比赛时间：</span>                       
+                    <asp:Label ID="S_TimeLabel" runat="server" Text='<%# Eval("S_Time") %>' />                      
                     <br />
-                        比赛地点：
-                        
-                            <asp:Label ID="S_AdderLabel" runat="server" Text='<%# Eval("S_Adder") %>' />
-                        
+                    <span>比赛地点：</span>                        
+                    <asp:Label ID="S_AdderLabel" runat="server" Text='<%# Eval("S_Adder") %>' />                       
                     <br />
-                       已参加人数：
-                       
-                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                     
+                    <span>已参加人数：</span>                       
+                    <asp:Label ID="Label1" runat="server"><%# Eval("S_Num") %></asp:Label>                    
                     <br />
-                      
-                            <asp:Button ID="Button1" runat="server" Text="参加" OnClientClick="return confirm('参加成功!')" />
-                        
-                    <br />
-                    
-                </ItemTemplate>
-            </asp:ListView>
+                    <asp:Panel runat="server" ID="SubmitPanel">
+                        <%-- 用隐藏控件来保存赛事 ID --%>
+                        <asp:HiddenField ID="HideSaishiId" runat="server" Value='<%# Eval("S_Id") %>' Visible="false"/>                  
+                        <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary btn-lg" Text="参加" OnClick="Button1_Click" OnClientClick="return confirm('参加成功!')" />  
+                    </asp:Panel>                      
+                    <br />   
+                </td>                 
+            </ItemTemplate>
+        </asp:ListView>
         <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
     </div>
 </asp:Content>

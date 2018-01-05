@@ -14,7 +14,7 @@
                             <strong>用&nbsp;&nbsp;户&nbsp;&nbsp;名：</strong>                                
                         </td>
                         <td>
-                            <asp:TextBox ID="txtuserName" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtuserName" runat="server" CssClass="form-control;" placeholder="请输入用户名"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtuserName" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
@@ -31,7 +31,7 @@
                             <strong>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</strong>
                         </td>
                         <td>
-                            <asp:TextBox ID="txtuserPassword" runat="server" TextMode="Password"></asp:TextBox>
+                            <asp:TextBox ID="txtuserPassword" runat="server" TextMode="Password" CssClass="form-control;" placeholder="请输入密码"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ControlToValidate="txtuserPassword" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
@@ -48,9 +48,8 @@
                             <strong>确认密码：</strong>
                         </td>
                         <td>
-                            <asp:TextBox ID="reuserPassword" runat="server" TextMode="Password"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ControlToValidate="reuserPassword" ForeColor="Red"></asp:RequiredFieldValidator>
-                            
+                            <asp:TextBox ID="reuserPassword" runat="server" TextMode="Password" CssClass="form-control;" placeholder="请输入确认密码"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ControlToValidate="reuserPassword" ForeColor="Red"></asp:RequiredFieldValidator>                           
                         </td>
                     </tr>
                     <tr>
@@ -63,14 +62,8 @@
                     </tr>     
                 </table>
                 <br />                
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="注册" />
-               
-               
-               
-                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-               
-               
-               
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="注册" CssClass="btn btn-primary btn-lg" />                                           
+                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>                                             
             </div>
         </div>
     </div>

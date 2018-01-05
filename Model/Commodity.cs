@@ -19,6 +19,8 @@ namespace Model
         private string c_size;                                                //商品尺寸
         private string c_color;                                                   //商品颜色
         private string c_biaoshi;
+        private string c_price;
+        private string c_content;
         public int C_Id
         {
             get { return this.c_id; }
@@ -31,8 +33,8 @@ namespace Model
         }
         public string C_Price
         {
-            get { return this.c_photo; }
-            set { this.c_photo = value; }
+            get { return this.c_price; }
+            set { this.c_price= value; }
         }
         public string C_Photo
         {
@@ -75,10 +77,16 @@ namespace Model
             get { return this.c_color; }
             set { this.c_color = value; }
         }
-        public string C_Baioshi
+        public string C_Biaoshi
         {
             get { return this.c_biaoshi; }
             set { this.c_biaoshi = value; }
+        }
+
+        public string C_Content
+        {
+            get { return this.c_content; }
+            set { this.c_content = value; }
         }
     }
 }

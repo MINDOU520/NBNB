@@ -50,7 +50,12 @@ namespace DAL
        
         public DataTable SelectAll()
         {
-            string sql = "select a.*,b.username from saishi a, Users b where a.userid=b.userid order by s_time desc";
+            string sql = @"select a.*,
+                                           b.username  AS [username],
+                                           b.[UserTouxiang] AS [usertouxiang]
+                                  from saishi a, Users b 
+                                  where a.userid=b.userid 
+                                  order by s_time desc";
             return DBHelper.GetFillData(sql);
         }
       
@@ -63,9 +68,9 @@ namespace DAL
 
         public DataTable SelectsaishiById(int S_Id)
         {
-            string sql = @"select [Users].[UserTouxiang]AS [usertouxiang],
-                             [Users].[UserName]AS [username],
-                             [Saishi].*
+            string sql = @"select [Users].[UserTouxiang] AS [usertouxiang],
+                                   [Users].[UserName] AS [username],
+                                   [Saishi].*
                            FROM [Users], [Saishi]
                            WHERE [Users].[UserId] = [Saishi].[UserId]
                              AND [Saishi].[s_id] = @s_id";

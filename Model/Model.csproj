@@ -62,6 +62,8 @@
     <Compile Include="Users.cs" />
     <Compile Include="Video.cs" />
     <Compile Include="Zhanbao.cs" />
+    <Compile Include="Z_Comment.cs" />
+    <Compile Include="Z_Reply.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -21,7 +21,7 @@
                         <td style="text-align:right"><strong>用户名：</strong>
                         </td>
                         <td>
-                            <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtName" runat="server" CssClass="form-control;" placeholder="请输入用户名"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtName" Display="Dynamic" ErrorMessage="*" ForeColor="Red">
                             </asp:RequiredFieldValidator>
                         </td>
@@ -38,7 +38,7 @@
                         <td style="text-align:right"><strong>密&nbsp;&nbsp;&nbsp;&nbsp;码：</strong>
                         </td>
                         <td>
-                            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+                            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control;" placeholder="请输入密码"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPassword" Display="Dynamic" ErrorMessage="*" ForeColor="Red">
                             </asp:RequiredFieldValidator>
                         </td>
@@ -55,7 +55,7 @@
                         <td style="text-align:right"><strong>验证码：</strong>
                         </td>
                         <td>
-                            <asp:TextBox ID="txtCheckcode" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtCheckcode" runat="server" CssClass="form-control;" placeholder="请输入验证码"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="equiredFieldValidator1" runat="server" ControlToValidate="txtCheckcode" Display="Dynamic" ErrorMessage="*" ForeColor="Red">
                             </asp:RequiredFieldValidator>
                         </td>
@@ -95,7 +95,7 @@
                     </tr>                                   
                 </table>
                 <br />                
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="登录" />
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="登录" CssClass="btn btn-primary btn-lg" />
                 <br />
                 <br />
                 <asp:Label ID="label1" runat="server" ForeColor="Red"></asp:Label>
